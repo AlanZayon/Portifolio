@@ -17,28 +17,31 @@ body {
 }
 
 .main-section {
-    height: 100vh;
+    height: 100%;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 }
 
 .left-content h5 {
     color: #ccc;
     font-weight: 300;
     opacity: 0;
-    /* Começa invisível */
     animation: slideIn 1s ease forwards;
 }
 
 .left-content h1 {
-    font-size: 7rem;
+    font-size: 8rem;
     font-weight: bold;
     opacity: 0;
-    /* Começa invisível */
     animation: slideIn 1.2s ease forwards;
-    /* Atraso leve em relação ao h5 */
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
 }
 
 .social-icons a {
-    display: inline-block;
     width: 70px;
     height: 70px;
     margin-right: 10px;
@@ -76,6 +79,7 @@ body {
     animation: slideIn 2s ease forwards;
     /* Atraso maior para o botão */
     transform: translateY(0);
+    max-width: 15rem;
 }
 
 .stylish-button:hover {
@@ -107,11 +111,8 @@ body {
 
 .skill-icon {
     font-size: 50px;
-    /* Tamanho dos ícones */
     margin-right: 20px;
-    /* Espaço entre o ícone e a barra de progresso */
     color: #f8f9fa;
-    /* Cor dos ícones */
 }
 
 .progress {
@@ -125,23 +126,16 @@ body {
     background-color: #61dafb;
     height: 20px;
     line-height: 20px;
-    /* To center the text vertically */
     border-radius: 10px;
 }
 
 .stylish-line {
     width: 155px;
-    /* Define a largura da linha */
     height: 2px;
-    /* Altura da linha */
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
-    /* Efeito de gradiente */
     border-radius: 50px;
-    /* Borda arredondada para suavizar a linha */
     margin-top: 10px;
-    /* Espaço entre a linha e o título */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    /* Adiciona um efeito de sombra leve */
 }
 
 .aboutMe {
@@ -152,8 +146,7 @@ body {
 }
 
 .intro {
-    background-color: #1E3A5F  ;
-    /* ou qualquer outra cor sugerida */
+    background-color: #1E3A5F;
     padding: 50px;
     border-radius: 10px;
     max-width: 50%;
@@ -246,7 +239,8 @@ body {
     color: #FFFFFF;
 
 }
-.smaler-input{
+
+.smaler-input {
     height: 45px;
     font-size: 16px;
 }
@@ -277,13 +271,24 @@ textarea.form-control {
     background-color: #3E4A51;
 }
 
-/* @media (max-width: 992px) {
-    .intro {
-      margin: 10px; 
-      padding: 10px; 
+@media (width < 300px) {
+    .social-icons {
+        display: block;
     }
 
-    .intro p {
-        font-size: 0.9rem;
-      }
-  } */
+    .social-icons a{
+        display: inline-block;
+    }
+}
+
+@media (width < 768px) {
+    .left-content h1{
+        font-size: 5rem;
+    }
+}
+
+@media (width < 576px) {
+    .left-content h1{
+        font-size: 3rem;
+    }
+}
