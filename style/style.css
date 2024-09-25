@@ -1,0 +1,279 @@
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background-color: rgba(34, 34, 34, 0.3);
+    /* Cor preta com transparência */
+    backdrop-filter: blur(50px);
+    /* Efeito de desfoque de fundo */
+}
+
+.navbar .nav-link {
+    color: #fff;
+    margin-right: 15px;
+}
+
+/* Seu CSS original */
+.main-section {
+    height: 100vh;
+}
+
+.left-content h5 {
+    color: #ccc;
+    font-weight: 300;
+    opacity: 0;
+    /* Começa invisível */
+    animation: slideIn 1s ease forwards;
+}
+
+.left-content h1 {
+    font-size: 7rem;
+    font-weight: bold;
+    opacity: 0;
+    /* Começa invisível */
+    animation: slideIn 1.2s ease forwards;
+    /* Atraso leve em relação ao h5 */
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+    line-height: 66px;
+    font-size: 36px;
+    transition: background-color 0.3s, color 0.3s;
+    opacity: 0;
+    /* Começa invisível */
+    animation: slideIn 1.5s ease forwards;
+    /* Atraso para ícones */
+}
+
+.social-icons a:hover {
+    background-color: white;
+    color: black;
+}
+
+.stylish-button {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(39, 128, 227, 0.5);
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+    cursor: pointer;
+    opacity: 0;
+    /* Começa invisível */
+    animation: slideIn 2s ease forwards;
+    /* Atraso maior para o botão */
+    transform: translateY(0);
+}
+
+.stylish-button:hover {
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+}
+
+/* Animação personalizada para o texto e outros elementos */
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.skill-item {
+    margin-bottom: 20px;
+    /* Espaçamento entre os itens */
+    align-items: center;
+    /* Centraliza os itens verticalmente */
+    display: flex;
+    /* Flexibilidade do layout */
+}
+
+.skill-icon {
+    font-size: 50px;
+    /* Tamanho dos ícones */
+    margin-right: 20px;
+    /* Espaço entre o ícone e a barra de progresso */
+    color: #f8f9fa;
+    /* Cor dos ícones */
+}
+
+.progress {
+    background-color: #282c34;
+    border-radius: 10px;
+    height: 20px;
+    width: 100%;
+}
+
+.progress-bar {
+    background-color: #61dafb;
+    height: 20px;
+    line-height: 20px;
+    /* To center the text vertically */
+    border-radius: 10px;
+}
+
+.stylish-line {
+    width: 155px;
+    /* Define a largura da linha */
+    height: 2px;
+    /* Altura da linha */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+    /* Efeito de gradiente */
+    border-radius: 50px;
+    /* Borda arredondada para suavizar a linha */
+    margin-top: 10px;
+    /* Espaço entre a linha e o título */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Adiciona um efeito de sombra leve */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.intro {
+    background-color: #1E3A5F  ;
+    /* ou qualquer outra cor sugerida */
+    padding: 50px;
+    border-radius: 10px;
+    max-width: 50%;
+}
+
+.intro h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.intro img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* Estilos do card */
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    /* Permitir que o brilho saia do card */
+    max-width: 350px;
+}
+
+/* Efeito de brilho ao redor do card com ::before */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    filter: blur(15px);
+    /* Adiciona desfoque ao brilho */
+    pointer-events: none;
+}
+
+/* Quando o mouse estiver sobre o card */
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    /* Mover o card para cima e aumentar */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    /* Sombra adicional */
+}
+
+/* Efeito de brilho no hover */
+.card:hover::before {
+    opacity: 1;
+    /* O brilho aparece */
+    transform: scale(1);
+    /* Expande o brilho */
+}
+
+.section-title {
+    color: #FFFFFF;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.social-item img {
+    margin-right: 10px;
+}
+
+.form-control {
+    background-color: #3E4A51;
+    border: 1px solid #B3B6B7;
+    border-radius: 20px;
+    padding-left: 15px;
+    color: #FFFFFF;
+
+}
+.smaler-input{
+    height: 45px;
+    font-size: 16px;
+}
+
+.form-control::placeholder {
+    color: #B3B6B7;
+}
+
+.form-control:focus {
+    background-color: #3E4A51;
+    color: #FFFFFF;
+    border-color: #B3B6B7;
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+.btn-primary {
+    background-color: #5A6C7A;
+    color: #B3B6B7;
+    border-radius: 20px;
+    padding: 5px 20px;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #3E4A51;
+}
