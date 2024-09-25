@@ -145,12 +145,13 @@ body {
     /* Adiciona um efeito de sombra leve */
 }
 
-main {
+.aboutMe {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .intro {
@@ -159,6 +160,7 @@ main {
     padding: 50px;
     border-radius: 10px;
     max-width: 50%;
+    flex-wrap: wrap
 }
 
 .intro h2 {
@@ -168,7 +170,7 @@ main {
 }
 
 .intro p {
-    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 20px;
 }
 
@@ -277,3 +279,15 @@ textarea.form-control {
 .btn-primary:hover {
     background-color: #3E4A51;
 }
+
+/* Para telas menores */
+@media (max-width: 992px) {
+    .intro {
+      margin: 10px; /* Reduz a margem em telas menores */
+      padding: 10px; /* Reduz o padding em telas menores */
+    }
+
+    .intro p {
+        font-size: 0.9rem; /* Diminui a fonte em telas menores */
+      }
+  }
