@@ -6,9 +6,7 @@ body {
 
 .navbar {
     background-color: rgba(34, 34, 34, 0.3);
-    /* Cor preta com transparência */
     backdrop-filter: blur(50px);
-    /* Efeito de desfoque de fundo */
 }
 
 .navbar .nav-link {
@@ -36,7 +34,7 @@ body {
     animation: slideIn 1.2s ease forwards;
 }
 
-.social-icons{
+.social-icons {
     display: flex;
     justify-content: center;
 }
@@ -53,9 +51,7 @@ body {
     font-size: 36px;
     transition: background-color 0.3s, color 0.3s;
     opacity: 0;
-    /* Começa invisível */
     animation: slideIn 1.5s ease forwards;
-    /* Atraso para ícones */
 }
 
 .social-icons a:hover {
@@ -75,18 +71,26 @@ body {
     transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
     cursor: pointer;
     opacity: 0;
-    /* Começa invisível */
-    animation: slideIn 2s ease forwards;
-    /* Atraso maior para o botão */
+    background-size: 200% 200%;
+    animation: slideIn 2s ease forwards, gradientAnimation 4s ease infinite;
     transform: translateY(0);
     max-width: 15rem;
 }
 
-.stylish-button:hover {
-    background: linear-gradient(90deg, #2575fc, #6a11cb);
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-/* Animação personalizada para o texto e outros elementos */
 @keyframes slideIn {
     from {
         transform: translateY(50px);
@@ -102,11 +106,8 @@ body {
 
 .skill-item {
     margin-bottom: 20px;
-    /* Espaçamento entre os itens */
     align-items: center;
-    /* Centraliza os itens verticalmente */
     display: flex;
-    /* Flexibilidade do layout */
 }
 
 .skill-icon {
@@ -171,18 +172,15 @@ body {
 }
 
 
-/* Estilos do card */
 .card {
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     z-index: 1;
     overflow: visible;
-    /* Permitir que o brilho saia do card */
     max-width: 350px;
 }
 
-/* Efeito de brilho ao redor do card com ::before */
 .card::before {
     content: '';
     position: absolute;
@@ -195,24 +193,17 @@ body {
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.5s ease;
     filter: blur(15px);
-    /* Adiciona desfoque ao brilho */
     pointer-events: none;
 }
 
-/* Quando o mouse estiver sobre o card */
 .card:hover {
     transform: translateY(-10px) scale(1.05);
-    /* Mover o card para cima e aumentar */
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-    /* Sombra adicional */
 }
 
-/* Efeito de brilho no hover */
 .card:hover::before {
     opacity: 1;
-    /* O brilho aparece */
     transform: scale(1);
-    /* Expande o brilho */
 }
 
 .section-title {
@@ -276,26 +267,26 @@ textarea.form-control {
         display: block;
     }
 
-    .social-icons a{
+    .social-icons a {
         display: inline-block;
     }
 }
 
 @media (width < 768px) {
-    .left-content h1{
+    .left-content h1 {
         font-size: 5rem;
     }
 }
 
 @media (width < 576px) {
-    .left-content h1{
+    .left-content h1 {
         font-size: 3rem;
     }
 
     .intro h2 {
         font-size: 1.5rem;
     }
-    
+
     .intro p {
         font-size: 0.8rem;
     }
