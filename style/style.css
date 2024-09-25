@@ -16,7 +16,6 @@ body {
     margin-right: 15px;
 }
 
-/* Seu CSS original */
 .main-section {
     height: 100vh;
 }
@@ -147,11 +146,9 @@ body {
 
 .aboutMe {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    overflow: hidden;
+    height: auto;
 }
 
 .intro {
@@ -280,14 +277,13 @@ textarea.form-control {
     background-color: #3E4A51;
 }
 
-/* Para telas menores */
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
     .intro {
-      margin: 10px; /* Reduz a margem em telas menores */
-      padding: 10px; /* Reduz o padding em telas menores */
+      margin: 10px; 
+      padding: 10px; 
     }
 
     .intro p {
-        font-size: 0.9rem; /* Diminui a fonte em telas menores */
+        font-size: 0.9rem;
       }
-  }
+  } */
