@@ -149,12 +149,12 @@ body {
     background-color: #1E3A5F;
     padding: 50px;
     border-radius: 10px;
-    max-width: 50%;
+    max-width: 80%;
     flex-wrap: wrap
 }
 
 .intro h2 {
-    font-size: 36px;
+    font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -290,5 +290,13 @@ textarea.form-control {
 @media (width < 576px) {
     .left-content h1{
         font-size: 3rem;
+    }
+
+    .intro h2 {
+        font-size: 1.5rem;
+    }
+    
+    .intro p {
+        font-size: 0.8rem;
     }
 }
