@@ -151,7 +151,8 @@ body {
     padding: 50px;
     border-radius: 10px;
     max-width: 80%;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
 }
 
 .intro h2 {
@@ -169,7 +170,6 @@ body {
     width: 200px;
     height: auto;
     border-radius: 50%;
-    object-fit: cover; 
     box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
 }
 
