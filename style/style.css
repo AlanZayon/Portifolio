@@ -168,6 +168,9 @@ body {
 .intro img {
     width: 200px;
     height: auto;
+    border-radius: 50%;
+    object-fit: cover; 
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
 }
 
 
