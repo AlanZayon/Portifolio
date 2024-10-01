@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advocacia</title>
+    <title>Alan Zayon</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -25,16 +25,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Áreas de atuação</a>
+                        <a class="nav-link" href="#aboutMe">About me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contato</a>
+                        <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nossos artigos</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
 
 
@@ -48,22 +48,24 @@
         <div class="container">
             <div class=" row left-content d-flex align-items-center justify-content-center">
                 <h5 class="animate__animated animate__fadeInLeft animate__delay-1s text-center">Hi, I'm Alan Zayon</h5>
-                <h1 class="animate__animated animate__fadeInRight animate__delay-2s text-center">Fullstack Devoloper</h1>
+                <h1 class="animate__animated animate__fadeInRight animate__delay-2s text-center">Fullstack Devoloper
+                </h1>
 
                 <div class="social-icons m-4 animate__animated animate__fadeInUp animate__delay-3s">
-                    <a href="https://wa.me/5551987654321" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://github.com/seuperfil" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/seuperfil" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/alan.zayon/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/AlanZayon" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/alan-zayon-247838257/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
                 </div>
 
-                <button class="stylish-button ">Conheça Meus Projetos</button>
+                <button onclick="scrollToSection()" class="stylish-button ">Contact me</button>
             </div>
         </div>
     </section>
 
 
-    <div class="container py-5">
-        <h2 class="text-center mb-5" style="color: #f8f9fa;">Minhas habilidades em tecnologia
+    <div id="skills" class="container py-5">
+        <h2 class="text-center mb-5" style="color: #f8f9fa;">Skills
             <div class="stylish-line mx-auto"></div>
         </h2>
 
@@ -112,17 +114,29 @@
         </div>
     </div>
 
-    <div class="aboutMe">
+    <div id="aboutMe" class="aboutMe">
         <section class="intro py-5 px-1">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6 text-center">
                         <h2>About me</h2>
                         <p>
-                            Sou [Seu Nome], um designer gráfico especializado em criar soluções visuais criativas e funcionais.
-                            Com [X anos] de experiência, já trabalhei em projetos de branding, ilustração e design digital.
-                            Meu objetivo é transformar ideias em designs impactantes que conectem visualmente e agreguem valor.
-                            Sempre buscando inovação, estou pronto para colaborar em novos desafios criativos!
+                            Hello! I'm Alan Zayon, a web developer specialized in creating modern and efficient
+                            applications. I started my programming journey in 2020, but in 2023, I decided to take my
+                            studies to the next level. Since then, I have been focusing on full-stack development, using
+                            technologies such as Node.js, MongoDB, React, Bootstrap, and Firebase.
+                        </p>
+                        <p>
+                            I have experience building both the backend and frontend of web applications. On the
+                            backend, I work with Node.js and MongoDB to create scalable and secure APIs. On the
+                            frontend, I use React and Bootstrap to develop responsive and intuitive interfaces.
+                            Additionally, I integrate Firebase for authentication and real-time data management,
+                            creating dynamic and interactive user experiences.
+                        </p>
+                        <p>
+                            I'm always seeking new challenges and continuous learning. My passion is solving complex
+                            problems and turning ideas into reality through technology. If you're looking for someone
+                            committed and with diverse skills, I'm available to collaborate on new projects!
                         </p>
                         <img src="./images/90863724.jpg" alt="Graphic Designer Illustration" class="img-fluid">
                     </div>
@@ -134,25 +148,24 @@
     <section id="projects" class="py-5">
         <div class="container">
             <h2 class="text-center mb-5">
-                Meus Projetos
+                Projects
                 <div class="stylish-line mx-auto"></div>
             </h2>
             <div class="section-card row row-cols-1 row-cols-md-2 g-5 mt-1 ">
                 <!-- Projeto 1 -->
                 <div class="">
                     <div class="card h-100 project-card  w-75 mx-auto">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top"
-                            alt="Screenshot do Projeto 1">
+                        <img src="./images/file.jpg" class="card-img-top" alt="Screenshot do Projeto 1">
                         <div class="card-body">
-                            <h5 class="card-title">Projeto 1</h5>
-                            <p class="card-text">Este é um projeto de exemplo que utiliza HTML, CSS e JavaScript para
-                                criar uma interface moderna e responsiva.</p>
+                            <h5 class="card-title">Authorization system</h5>
+                            <p class="card-text">This is a sample project implementing an authorization system using
+                                React, Node.js, and MongoDB. Firebase handles social logins via Google and Facebook,
+                                while Node.js manages traditional authentication. The application is modern, responsive,
+                                and secure.</p>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/user/project1" target="_blank" class="btn btn-dark">Ver no
-                                GitHub</a>
-                            <a href="https://project1-live.com" target="_blank" class="btn btn-outline-dark">Ver ao
-                                Vivo</a>
+                            <a href="https://github.com/AlanZayon/interface-auth" target="_blank" class="btn btn-dark">View on GitHub</a>
+                            <a href="https://site-kong.netlify.app/" target="_blank" class="btn btn-outline-dark">Watch Live</a>
                         </div>
                     </div>
                 </div>
@@ -162,15 +175,12 @@
                         <img src="https://via.placeholder.com/400x300" class="card-img-top"
                             alt="Screenshot do Projeto 2">
                         <div class="card-body">
-                            <h5 class="card-title">Projeto 2</h5>
-                            <p class="card-text">Aplicativo de gerenciamento de tarefas desenvolvido com React e
-                                Node.js, com foco em produtividade e UX.</p>
+                            <h5 class="card-title">New Project</h5>
+                            <p class="card-text">Project in Development.</p>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/user/project2" target="_blank" class="btn btn-dark">Ver no
-                                GitHub</a>
-                            <a href="https://project2-live.com" target="_blank" class="btn btn-outline-dark">Ver ao
-                                Vivo</a>
+                            <a href="https://github.com/user/project2" target="_blank" class="btn btn-dark">View on GitHub</a>
+                            <a href="https://project2-live.com" target="_blank" class="btn btn-outline-dark">Watch Live</a>
                         </div>
                     </div>
                 </div>
@@ -178,36 +188,36 @@
         </div>
     </section>
 
-    <div class="container d-flex justify-content-around align-items-center vh-100">
+    <div id="contact" class="container d-flex justify-content-around align-items-center vh-100">
         <div class="row w-100">
-          <div class="col-md-6 social-section">
-            <h2 class="section-title">Social</h2>
-            <div class="social-item">
-              <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="gmail">
-              <span>alanzayon82@gmail.com</span>
+            <div class="col-md-6 social-section">
+                <h2 class="section-title">Social</h2>
+                <div class="social-item">
+                    <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="gmail">
+                    <span>alanzayon82@gmail.com</span>
+                </div>
             </div>
-          </div>
-    
-          <div class="col-md-5">
-            <h2 class="section-title">Contact</h2>
-            <form id="contactForm">
-              <div class="mb-3">
-                <input type="text" class="form-control smaler-input" placeholder="First Name" id="firstName">
-              </div>
-              <div class="mb-3">
-                <input type="text" class="form-control smaler-input" placeholder="Last Name" id="lastName">
-              </div>
-              <div class="mb-3">
-                <input type="text" class="form-control smaler-input" placeholder="Subject" id="subject">
-              </div>
-              <div class="mb-3">
-                <textarea class="form-control" placeholder="Message" id="message" rows="4"></textarea>
-              </div>
-              <button type="button" class="btn btn-primary" onclick="sendEmail()">Send</button>
-            </form>
-          </div>
+
+            <div class="col-md-5">
+                <h2 class="section-title">Contact</h2>
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control smaler-input" placeholder="First Name" id="firstName">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control smaler-input" placeholder="Last Name" id="lastName">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control smaler-input" placeholder="Subject" id="subject">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" placeholder="Message" id="message" rows="4"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="sendEmail()">Send</button>
+                </form>
+            </div>
         </div>
-      </div>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -13,4 +13,10 @@ function sendEmail() {
   
     window.location.href = `mailto:alanzayon82@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
   }
+
+  function scrollToSection() {
+    document.getElementById("contact").scrollIntoView({
+        behavior: 'smooth'
+    });
+}
   
