@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Zayon | Fullstack Developer</title>
+    <meta name="description"
+        content="Portfólio de Alan Zayon, desenvolvedor Fullstack especializado em Node.js, React e MongoDB">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    
+    <!-- CSS para o seletor de idioma -->
+    <style>
+        .language-selector {
+            position: relative;
+            margin-left: 20px;
+        }
+        
+        .language-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #6c5ce7;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .language-btn i {
+            margin-right: 5px;
+        }
+        
+        .language-options {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+            min-width: 120px;
+        }
+        
+        .language-options.show {
+            display: block;
+        }
+        
+        .language-option {
+            padding: 10px 15px;
+            cursor: pointer;
+            color: #333;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .language-option:hover {
+            background: #f5f5f5;
+        }
+        
+        .language-option i {
+            margin-right: 8px;
+        }
+        
+        .language-option.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        @media (max-width: 991px) {
+            .language-selector {
+                margin: 15px 0 0 15px;
+            }
+            
+            .language-options {
+                right: auto;
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="brand-name">Alan Zayon</span>
+                <span class="brand-title">Fullstack Developer</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills" data-translate="nav_skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aboutMe" data-translate="nav_about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects" data-translate="nav_projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" data-translate="nav_contact">Contact</a>
+                    </li>
+                    
+                    <!-- Seletor de Idioma -->
+                    <li class="nav-item">
+                        <div class="language-selector">
+                            <button class="language-btn" id="languageBtn">
+                                <i class="fas fa-globe"></i> <span id="currentLanguage">PT</span>
+                            </button>
+                            <div class="language-options" id="languageOptions">
+                                <div class="language-option active" data-lang="pt">
+                                    <i class="fas fa-check"></i> Português
+                                </div>
+                                <div class="language-option" data-lang="en">
+                                    <i class="fas fa-check"></i> English
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h5 class="animate__animated animate__fadeInLeft animate__delay-1s" data-translate="hero_greeting">Hello, I'm</h5>
+                    <h1 class="animate__animated animate__fadeInRight animate__delay-2s">Alan Zayon</h1>
+                    <h2 class="animate__animated animate__fadeInUp animate__delay-3s" data-translate="hero_title">Fullstack Developer</h2>
+                    <p class="animate__animated animate__fadeInUp animate__delay-4s" data-translate="hero_description">I build modern, responsive web applications with cutting-edge technologies.</p>
+
+                    <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-5s">
+                        <button onclick="scrollToSection('contact')" class="btn btn-primary me-3" data-translate="hero_hire">Hire Me</button>
+                        <a href="#projects" class="btn btn-outline-light" data-translate="hero_work">View Work</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image animate__animated animate__fadeIn animate__delay-3s">
+                        <img src="./images/5e3bbd1b-90be-4ad0-850b-dc754a994e0f.png" alt="Developer Illustration"
+                            class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-icons animate__animated animate__fadeInUp animate__delay-6s">
+                <a href="https://github.com/AlanZayon" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/alan-zayon-247838257/" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="skills_title">My Skills</h2>
+                <div class="section-divider"></div>
+                <p data-translate="skills_description">I've worked with a variety of technologies in the web development world. Here are my core competencies:</p>
+            </div>
+
+            <div class="row skills-container">
+                <!-- Frontend Skills -->
+                <div class="col-md-4 mb-4">
+                    <h3 class="skills-category" data-translate="skills_frontend">Frontend</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>React</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Vue.js</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Tailwind CSS</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Bootstrap</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Skills -->
+                <div class="col-md-4 mb-4">
+                    <h3 class="skills-category" data-translate="skills_backend">Backend</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>C#</span>
+                            <span>82%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 82%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>ASP.NET Core</span>
+                            <span>78%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 78%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Node.js</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Express</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>REST APIs</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database Skills -->
+                <div class="col-md-4 mb-4">
+                    <h3 class="skills-category" data-translate="skills_databases">Databases</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>PostgreSQL</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>MongoDB</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Firebase</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Entity Framework</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="other-skills">
+                <h4 data-translate="skills_other">Other Tools & Technologies:</h4>
+                <div class="skills-tags">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">JWT</span>
+                    <span class="skill-tag" data-translate="skills_responsive">Responsive Design</span>
+                    <span class="skill-tag">Webpack</span>
+                    <span class="skill-tag">Netlify</span>
+                    <span class="skill-tag">Vercel</span>
+                    <span class="skill-tag">Docker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="aboutMe" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="about-image">
+                        <img src="./images/5e3bbd1b-90be-4ad0-850b-dc754a994e0f.png" alt="Alan Zayon" class="img-fluid">
+                        <div class="experience-badge">
+                            <span>3+</span>
+                            <small data-translate="about_experience">Years Experience</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="section-header">
+                        <h2 data-translate="about_title">About Me</h2>
+                        <div class="section-divider"></div>
+                    </div>
+
+                    <div class="about-content">
+                        <p data-translate="about_p1">I'm a passionate Fullstack Developer with expertise in building modern web applications. My journey in programming began in 2020, and since 2023 I've been deeply focused on mastering full-stack development.</p>
+
+                        <p data-translate="about_p2">I specialize in creating efficient, scalable solutions using technologies like React, Node.js, and MongoDB. My approach combines technical excellence with clean design to deliver exceptional user experiences.</p>
+
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span data-translate="about_feature1">Clean, efficient code</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span data-translate="about_feature2">Responsive design</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span data-translate="about_feature3">Performance optimization</span>
+                            </div>
+                        </div>
+
+                        <div class="about-cta">
+                            <a href="#contact" class="btn btn-primary me-3" data-translate="about_hire">Hire Me</a>
+                            <a href="./Curriculo_Alan_Zayon (1).pdf" download class="btn btn-outline-light">
+                                <i class="fas fa-download me-2"></i><span data-translate="about_cv">Download CV</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="projects_title">My Projects</h2>
+                <div class="section-divider"></div>
+                <p data-translate="projects_description">Here are some of my recent projects. Each one was carefully crafted to solve specific problems.</p>
+            </div>
+
+            <div class="row projects-container">
+                <!-- Project 1 -->
+                <div class="col-lg-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./images/Captura de tela 2025-08-27 164834.png"
+                                alt="Authorization System" class="img-fluid">
+                            <div class="project-links">
+                                <a href="https://pdftoexcel.netlify.app/access" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> <span data-translate="projects_live">Live Demo</span>
+                                </a>
+                                <a href="https://github.com/AlanZayon/ApiPdfCsv" target="_blank"
+                                    class="project-link">
+                                    <i class="fab fa-github"></i> <span data-translate="projects_code">View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 data-translate="project1_title">Federal Revenue PDF Processing System</h3>
+                            <p data-translate="project1_description">A .NET 8 API that processes Brazilian Federal Revenue PDFs (DARF and DAS), extracts financial data, generates structured CSV/Excel reports, and provides REST endpoints for file upload and download. Built with iTextSharp and Serilog for PDF handling and logging.</p>
+                            <div class="project-tech">
+                                <span>Vue</span>
+                                <span>TailWind</span>
+                                <span>.NET</span>
+                                <span>ASP.NET Core</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-lg-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./images/Captura de tela 2025-08-26 121844.png" alt="Employee Management System"
+                                class="img-fluid">
+                            <div class="project-links">
+                                <a href="https://interface-sistema-maranguape.vercel.app/" target="_blank"
+                                    class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> <span data-translate="projects_live">Live Demo</span>
+                                </a>
+                                <a href="https://github.com/AlanZayon/interface-sistema-maranguape" target="_blank"
+                                    class="project-link">
+                                    <i class="fab fa-github"></i> <span data-translate="projects_code">View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 data-translate="project2_title">Employee Management System</h3>
+                            <p data-translate="project2_description">Full-stack CRUD application for employee management with intuitive interface. Features include real-time data updates, search functionality, and responsive design.</p>
+                            <div class="project-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>MongoDB</span>
+                                <span>Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="https://github.com/AlanZayon" target="_blank" class="btn btn-outline-light">
+                    <i class="fab fa-github me-2"></i> <span data-translate="projects_more">View More on GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="contact_title">Get In Touch</h2>
+                <div class="section-divider"></div>
+                <p data-translate="contact_description">Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5 data-translate="contact_email">Email</h5>
+                                <a href="mailto:alanzayon72@gmail.com">alanzayon72@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5 data-translate="contact_location">Location</h5>
+                                <span>Fortaleza, Brazil</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h5 data-translate="contact_availability">Availability</h5>
+                                <span data-translate="contact_hours">Monday - Friday: 9am - 6pm</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <h5 data-translate="contact_follow">Follow Me</h5>
+                            <div class="social-links">
+                                <a href="https://github.com/AlanZayon" target="_blank" aria-label="GitHub"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/alan-zayon-247838257/" target="_blank"
+                                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <form id="contactForm" class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" data-translate-placeholder="contact_name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" data-translate-placeholder="contact_email_placeholder" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="subject" placeholder="Subject" data-translate-placeholder="contact_subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" data-translate-placeholder="contact_message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane me-2"></i> <span data-translate="contact_send">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-brand">
+                        <span>Alan Zayon</span>
+                        <span data-translate="footer_title">Fullstack Developer</span>
+                    </div>
+                    <p class="footer-text" data-translate="footer_text">Creating digital solutions that make a difference.</p>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="footer-links">
+                        <h5 data-translate="footer_links">Quick Links</h5>
+                        <ul>
+                            <li><a href="#skills" data-translate="nav_skills">Skills</a></li>
+                            <li><a href="#aboutMe" data-translate="nav_about">About</a></li>
+                            <li><a href="#projects" data-translate="nav_projects">Projects</a></li>
+                            <li><a href="#contact" data-translate="nav_contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 Alan Zayon. <span data-translate="footer_rights">All rights reserved.</span></p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-social">
+                            <a href="https://github.com/AlanZayon" target="_blank" aria-label="GitHub"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/alan-zayon-247838257/" target="_blank"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="./script/script.js"></script>
+    
+    <!-- JavaScript para a funcionalidade de tradução -->
+    <script>
+        // Dicionários de tradução
+        const translations = {
+            'pt': {
+                // Navegação
+                'nav_skills': 'Habilidades',
+                'nav_about': 'Sobre',
+                'nav_projects': 'Projetos',
+                'nav_contact': 'Contato',
+                
+                // Hero Section
+                'hero_greeting': 'Olá, eu sou',
+                'hero_title': 'Desenvolvedor Fullstack',
+                'hero_description': 'Construo aplicações web modernas e responsivas com tecnologias de ponta.',
+                'hero_hire': 'Contrate-me',
+                'hero_work': 'Ver Trabalhos',
+                
+                // Skills Section
+                'skills_title': 'Minhas Habilidades',
+                'skills_description': 'Trabalhei com uma variedade de tecnologias no mundo do desenvolvimento web. Aqui estão minhas competências principais:',
+                'skills_frontend': 'Frontend',
+                'skills_backend': 'Backend',
+                'skills_databases': 'Bancos de Dados',
+                'skills_other': 'Outras Ferramentas & Tecnologias:',
+                'skills_responsive': 'Design Responsivo',
+                
+                // About Section
+                'about_title': 'Sobre Mim',
+                'about_p1': 'Sou um Desenvolvedor Fullstack apaixonado com expertise em construir aplicações web modernas. Minha jornada na programação começou em 2020, e desde 2023 tenho me focado profundamente em dominar o desenvolvimento full-stack.',
+                'about_p2': 'Especializo-me em criar soluções eficientes e escaláveis usando tecnologias como React, Node.js e MongoDB. Minha abordagem combina excelência técnica com design limpo para entregar experiências excepcionais ao usuário.',
+                'about_feature1': 'Código limpo e eficiente',
+                'about_feature2': 'Design responsivo',
+                'about_feature3': 'Otimização de performance',
+                'about_hire': 'Contrate-me',
+                'about_cv': 'Baixar CV',
+                'about_experience': 'Anos de Experiência',
+                
+                // Projects Section
+                'projects_title': 'Meus Projetos',
+                'projects_description': 'Aqui estão alguns dos meus projetos recentes. Cada um foi cuidadosamente elaborado para resolver problemas específicos.',
+                'projects_live': 'Demo Ao Vivo',
+                'projects_code': 'Ver Código',
+                'projects_more': 'Ver Mais no GitHub',
+                'project1_title': 'Sistema de Processamento de PDFs da Receita Federal',
+                'project1_description': 'Uma API .NET 8 que processa PDFs da Receita Federal brasileira (DARF e DAS), extrai dados financeiros, gera relatórios estruturados em CSV/Excel e fornece endpoints REST para upload e download de arquivos. Construída com iTextSharp e Serilog para manipulação de PDF e logging.',
+                'project2_title': 'Sistema de Gerenciamento de Funcionários',
+                'project2_description': 'Aplicação CRUD full-stack para gerenciamento de funcionários com interface intuitiva. Inclui atualizações de dados em tempo real, funcionalidade de busca e design responsivo.',
+                
+                // Contact Section
+                'contact_title': 'Entre em Contato',
+                'contact_description': 'Tem um projeto em mente ou quer discutir oportunidades potenciais? Sinta-se à vontade para entrar em contato!',
+                'contact_email': 'Email',
+                'contact_location': 'Localização',
+                'contact_availability': 'Disponibilidade',
+                'contact_hours': 'Segunda - Sexta: 9h - 18h',
+                'contact_follow': 'Siga-me',
+                'contact_name': 'Seu Nome',
+                'contact_email_placeholder': 'Seu Email',
+                'contact_subject': 'Assunto',
+                'contact_message': 'Sua Mensagem',
+                'contact_send': 'Enviar Mensagem',
+                
+                // Footer
+                'footer_title': 'Desenvolvedor Fullstack',
+                'footer_text': 'Criando soluções digitais que fazem a diferença.',
+                'footer_links': 'Links Rápidos',
+                'footer_rights': 'Todos os direitos reservados.'
+            },
+            'en': {
+                // Navegação
+                'nav_skills': 'Skills',
+                'nav_about': 'About',
+                'nav_projects': 'Projects',
+                'nav_contact': 'Contact',
+                
+                // Hero Section
+                'hero_greeting': 'Hello, I\'m',
+                'hero_title': 'Fullstack Developer',
+                'hero_description': 'I build modern, responsive web applications with cutting-edge technologies.',
+                'hero_hire': 'Hire Me',
+                'hero_work': 'View Work',
+                
+                // Skills Section
+                'skills_title': 'My Skills',
+                'skills_description': 'I\'ve worked with a variety of technologies in the web development world. Here are my core competencies:',
+                'skills_frontend': 'Frontend',
+                'skills_backend': 'Backend',
+                'skills_databases': 'Databases',
+                'skills_other': 'Other Tools & Technologies:',
+                'skills_responsive': 'Responsive Design',
+                
+                // About Section
+                'about_title': 'About Me',
+                'about_p1': 'I\'m a passionate Fullstack Developer with expertise in building modern web applications. My journey in programming began in 2020, and since 2023 I\'ve been deeply focused on mastering full-stack development.',
+                'about_p2': 'I specialize in creating efficient, scalable solutions using technologies like React, Node.js, and MongoDB. My approach combines technical excellence with clean design to deliver exceptional user experiences.',
+                'about_feature1': 'Clean, efficient code',
+                'about_feature2': 'Responsive design',
+                'about_feature3': 'Performance optimization',
+                'about_hire': 'Hire Me',
+                'about_cv': 'Download CV',
+                'about_experience': 'Years Experience',
+                
+                // Projects Section
+                'projects_title': 'My Projects',
+                'projects_description': 'Here are some of my recent projects. Each one was carefully crafted to solve specific problems.',
+                'projects_live': 'Live Demo',
+                'projects_code': 'View Code',
+                'projects_more': 'View More on GitHub',
+                'project1_title': 'Federal Revenue PDF Processing System',
+                'project1_description': 'A .NET 8 API that processes Brazilian Federal Revenue PDFs (DARF and DAS), extracts financial data, generates structured CSV/Excel reports, and provides REST endpoints for file upload and download. Built with iTextSharp and Serilog for PDF handling and logging.',
+                'project2_title': 'Employee Management System',
+                'project2_description': 'Full-stack CRUD application for employee management with intuitive interface. Features include real-time data updates, search functionality, and responsive design.',
+                
+                // Contact Section
+                'contact_title': 'Get In Touch',
+                'contact_description': 'Have a project in mind or want to discuss potential opportunities? Feel free to reach out!',
+                'contact_email': 'Email',
+                'contact_location': 'Location',
+                'contact_availability': 'Availability',
+                'contact_hours': 'Monday - Friday: 9am - 6pm',
+                'contact_follow': 'Follow Me',
+                'contact_name': 'Your Name',
+                'contact_email_placeholder': 'Your Email',
+                'contact_subject': 'Subject',
+                'contact_message': 'Your Message',
+                'contact_send': 'Send Message',
+                
+                // Footer
+                'footer_title': 'Fullstack Developer',
+                'footer_text': 'Creating digital solutions that make a difference.',
+                'footer_links': 'Quick Links',
+                'footer_rights': 'All rights reserved.'
+            }
+        };
+
+        // Função para aplicar traduções
+        function applyTranslation(lang) {
+            // Atualizar o texto dos elementos com data-translate
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Atualizar placeholders
+            document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (translations[lang][key]) {
+                    element.placeholder = translations[lang][key];
+                }
+            });
+            
+            // Atualizar o idioma atual no botão
+            document.getElementById('currentLanguage').textContent = lang.toUpperCase();
+            
+            // Atualizar a classe active nas opções de idioma
+            document.querySelectorAll('.language-option').forEach(option => {
+                if (option.getAttribute('data-lang') === lang) {
+                    option.classList.add('active');
+                } else {
+                    option.classList.remove('active');
+                }
+            });
+            
+            // Salvar a preferência de idioma no localStorage
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Atualizar o atributo lang do html
+            document.documentElement.lang = lang;
+        }
+
+        // Inicializar o seletor de idioma
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageBtn = document.getElementById('languageBtn');
+            const languageOptions = document.getElementById('languageOptions');
+            
+            // Alternar a exibição das opções de idioma
+            languageBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                languageOptions.classList.toggle('show');
+            });
+            
+            // Fechar o menu de idiomas ao clicar fora
+            document.addEventListener('click', function() {
+                languageOptions.classList.remove('show');
+            });
+            
+            // Prevenir que o clique no menu feche o menu
+            languageOptions.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            
+            // Mudar idioma ao clicar em uma opção
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    applyTranslation(lang);
+                    languageOptions.classList.remove('show');
+                });
+            });
+            
+            // Carregar o idioma salvo ou usar o padrão (português)
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'pt';
+            applyTranslation(savedLanguage);
+        });
+    </script>
+</body>
+
+</html>
