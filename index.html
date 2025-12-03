@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alan Zayon | Fullstack Developer</title>
+    <title>Alan Zayon | Backend Developer</title>
     <meta name="description"
-        content="Portfólio de Alan Zayon, desenvolvedor Fullstack especializado em Node.js, React e MongoDB">
+        content="Portfólio de Alan Zayon, desenvolvedor Backend especializado em Node.js, .NET, APIs e arquitetura de sistemas">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -17,14 +17,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="manifest" href="./favicon/site.webmanifest">
-    
+
     <!-- CSS para o seletor de idioma -->
     <style>
+        
         .language-selector {
             position: relative;
             margin-left: 20px;
         }
-        
+
         .language-btn {
             background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -36,15 +37,15 @@
             align-items: center;
             transition: all 0.3s ease;
         }
-        
+
         .language-btn:hover {
             background: rgba(255, 255, 255, 0.1);
         }
-        
+
         .language-btn i {
             margin-right: 5px;
         }
-        
+
         .language-options {
             position: absolute;
             top: 100%;
@@ -56,11 +57,11 @@
             z-index: 1000;
             min-width: 120px;
         }
-        
+
         .language-options.show {
             display: block;
         }
-        
+
         .language-option {
             padding: 10px 15px;
             cursor: pointer;
@@ -69,29 +70,125 @@
             align-items: center;
             transition: all 0.3s ease;
         }
-        
+
         .language-option:hover {
             background: #f5f5f5;
         }
-        
+
         .language-option i {
             margin-right: 8px;
         }
-        
+
         .language-option.active {
             background: #007bff;
             color: white;
         }
-        
+
         @media (max-width: 991px) {
             .language-selector {
                 margin: 15px 0 0 15px;
             }
-            
+
             .language-options {
                 right: auto;
                 left: 0;
             }
+        }
+
+        /* Novos estilos para backend */
+        .backend-skill-item {
+            background: rgba(108, 92, 231, 0.1);
+            border-left: 4px solid #6c5ce7;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .architecture-item {
+            background: rgba(52, 152, 219, 0.1);
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .api-badge {
+            background: #6c5ce7;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        /* Estilos para os links dos projetos */
+        .project-links-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .project-link-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .project-link-btn.demo {
+            background: #6c5ce7;
+            color: white;
+            border: 1px solid #6c5ce7;
+        }
+
+        .project-link-btn.demo:hover {
+            background: #5b4bd4;
+            border-color: #5b4bd4;
+        }
+
+        .project-link-btn.docs {
+            background: transparent;
+            color: #6c5ce7;
+            border: 1px solid #6c5ce7;
+        }
+
+        .project-link-btn.docs:hover {
+            background: rgba(108, 92, 231, 0.1);
+        }
+
+        .project-link-btn.code {
+            background: #333;
+            color: white;
+            border: 1px solid #333;
+        }
+
+        .project-link-btn.code:hover {
+            background: #222;
+            border-color: #222;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-list li i {
+            color: #6c5ce7;
+            margin-right: 10px;
+            margin-top: 2px;
         }
     </style>
 </head>
@@ -103,7 +200,7 @@
         <div class="container">
             <a class="navbar-brand" href="#">
                 <span class="brand-name">Alan Zayon</span>
-                <span class="brand-title">Fullstack Developer</span>
+                <span class="brand-title">Backend Developer</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,7 +220,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contact" data-translate="nav_contact">Contact</a>
                     </li>
-                    
+
                     <!-- Seletor de Idioma -->
                     <li class="nav-item">
                         <div class="language-selector">
@@ -150,20 +247,24 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 hero-content">
-                    <h5 class="animate__animated animate__fadeInLeft animate__delay-1s" data-translate="hero_greeting">Hello, I'm</h5>
+                    <h5 class="animate__animated animate__fadeInLeft animate__delay-1s" data-translate="hero_greeting">
+                        Hello, I'm</h5>
                     <h1 class="animate__animated animate__fadeInRight animate__delay-2s">Alan Zayon</h1>
-                    <h2 class="animate__animated animate__fadeInUp animate__delay-3s" data-translate="hero_title">Fullstack Developer</h2>
-                    <p class="animate__animated animate__fadeInUp animate__delay-4s" data-translate="hero_description">I build modern, responsive web applications with cutting-edge technologies.</p>
+                    <h2 class="animate__animated animate__fadeInUp animate__delay-3s" data-translate="hero_title">
+                        Backend Developer</h2>
+                    <p class="animate__animated animate__fadeInUp animate__delay-4s" data-translate="hero_description">I
+                        build scalable, secure and efficient APIs and backend systems with modern technologies.</p>
 
                     <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-5s">
-                        <button onclick="scrollToSection('contact')" class="btn btn-primary me-3" data-translate="hero_hire">Hire Me</button>
-                        <a href="#projects" class="btn btn-outline-light" data-translate="hero_work">View Work</a>
+                        <button onclick="scrollToSection('contact')" class="btn btn-primary me-3"
+                            data-translate="hero_hire">Hire Me</button>
+                        <a href="#projects" class="btn btn-outline-light" data-translate="hero_work">View Projects</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="hero-image animate__animated animate__fadeIn animate__delay-3s">
-                        <img src="./images/5e3bbd1b-90be-4ad0-850b-dc754a994e0f.png" alt="Developer Illustration"
-                            class="img-fluid">
+                        <img src="./images/5e3bbd1b-90be-4ad0-850b-dc754a994e0f.png"
+                            alt="Backend Developer Illustration" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -183,34 +284,49 @@
             <div class="section-header">
                 <h2 data-translate="skills_title">My Skills</h2>
                 <div class="section-divider"></div>
-                <p data-translate="skills_description">I've worked with a variety of technologies in the web development world. Here are my core competencies:</p>
+                <p data-translate="skills_description">Specialized in backend development, APIs, databases and system
+                    architecture. Here are my technical competencies:</p>
             </div>
 
             <div class="row skills-container">
-                <!-- Frontend Skills -->
+                <!-- Backend Languages -->
                 <div class="col-md-4 mb-4">
-                    <h3 class="skills-category" data-translate="skills_frontend">Frontend</h3>
+                    <h3 class="skills-category" data-translate="skills_backend_languages">Backend Languages</h3>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span>React</span>
-                            <span>90%</span>
+                            <span>C# / .NET</span>
+                            <span>85%</span>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar" style="width: 90%"></div>
+                            <div class="progress-bar" style="width: 85%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span>Vue.js</span>
-                            <span>80%</span>
+                            <span>Node.js / TypeScript</span>
+                            <span>88%</span>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar" style="width: 80%"></div>
+                            <div class="progress-bar" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks & APIs -->
+                <div class="col-md-4 mb-4">
+                    <h3 class="skills-category" data-translate="skills_frameworks">Frameworks & APIs</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>ASP.NET Core</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span>Tailwind CSS</span>
+                            <span>Express.js</span>
                             <span>88%</span>
                         </div>
                         <div class="progress">
@@ -219,7 +335,7 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span>Bootstrap</span>
+                            <span>REST APIs</span>
                             <span>90%</span>
                         </div>
                         <div class="progress">
@@ -228,12 +344,21 @@
                     </div>
                 </div>
 
-                <!-- Backend Skills -->
+                <!-- Databases -->
                 <div class="col-md-4 mb-4">
-                    <h3 class="skills-category" data-translate="skills_backend">Backend</h3>
+                    <h3 class="skills-category" data-translate="skills_databases">Databases</h3>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span>C#</span>
+                            <span>PostgreSQL</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>MongoDB</span>
                             <span>82%</span>
                         </div>
                         <div class="progress">
@@ -242,94 +367,70 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span>ASP.NET Core</span>
+                            <span>Redis</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Entity Framework</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>SQL Server</span>
                             <span>78%</span>
                         </div>
                         <div class="progress">
                             <div class="progress-bar" style="width: 78%"></div>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Node.js</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Express</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>REST APIs</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 85%"></div>
+                </div>
+            </div>
+
+            <!-- Arquitetura & DevOps -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="architecture-item">
+                        <h4><i class="fas fa-sitemap me-2"></i> <span data-translate="skills_architecture">Architecture
+                                & Patterns</span></h4>
+                        <div class="skills-tags mt-3">
+                            <span class="skill-tag">DDD</span>
+                            <span class="skill-tag">Clean Architecture</span>
+                            <span class="skill-tag">SOLID Principles</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Database Skills -->
-                <div class="col-md-4 mb-4">
-                    <h3 class="skills-category" data-translate="skills_databases">Databases</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>PostgreSQL</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>MongoDB</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Firebase</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Entity Framework</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 75%"></div>
+                <div class="col-md-6">
+                    <div class="architecture-item">
+                        <h4><i class="fas fa-server me-2"></i> <span data-translate="skills_devops">DevOps &
+                                Cloud</span></h4>
+                        <div class="skills-tags mt-3">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Nginx</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="other-skills">
-                <h4 data-translate="skills_other">Other Tools & Technologies:</h4>
+            <div class="other-skills mt-4">
+                <h4 data-translate="skills_other">Security & Performance:</h4>
                 <div class="skills-tags">
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">JWT</span>
-                    <span class="skill-tag" data-translate="skills_responsive">Responsive Design</span>
-                    <span class="skill-tag">Webpack</span>
-                    <span class="skill-tag">Netlify</span>
-                    <span class="skill-tag">Vercel</span>
-                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">JWT Authentication</span>
+                    <span class="skill-tag">OAuth 2.0</span>
+                    <span class="skill-tag">API Security</span>
+                    <span class="skill-tag">Performance Optimization</span>
+                    <span class="skill-tag">Caching Strategies</span>
                 </div>
             </div>
         </div>
@@ -341,9 +442,10 @@
             <div class="row align-items-center">
                 <div class="col-lg-5">
                     <div class="about-image">
-                        <img src="./images/5e3bbd1b-90be-4ad0-850b-dc754a994e0f.png" alt="Alan Zayon" class="img-fluid">
+                        <img src="./images/5e3bbd1b-90be-4ad0-850b-dc754a994e0f.png"
+                            alt="Alan Zayon - Backend Developer" class="img-fluid">
                         <div class="experience-badge">
-                            <span>3+</span>
+                            <span>1+</span>
                             <small data-translate="about_experience">Years Experience</small>
                         </div>
                     </div>
@@ -355,26 +457,54 @@
                     </div>
 
                     <div class="about-content">
-                        <p data-translate="about_p1">I'm a passionate Fullstack Developer with expertise in building modern web applications. My journey in programming began in 2020, and since 2023 I've been deeply focused on mastering full-stack development.</p>
+                        <p data-translate="about_p1">I'm a passionate Backend Developer specialized in building
+                            scalable, high-performance APIs and distributed systems. My programming journey began in
+                            2020, and since 2023 I've been dedicated to mastering backend development and software
+                            architecture.</p>
 
-                        <p data-translate="about_p2">I specialize in creating efficient, scalable solutions using technologies like React, Node.js, and MongoDB. My approach combines technical excellence with clean design to deliver exceptional user experiences.</p>
+                        <p data-translate="about_p2">I specialize in creating robust solutions using technologies like
+                            .NET Core, Node.js, PostgreSQL and cloud services. My focus is on code quality, system
+                            performance and secure architecture to deliver reliable and scalable backend services.</p>
 
-                        <div class="about-features">
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span data-translate="about_feature1">Clean, efficient code</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span data-translate="about_feature2">Responsive design</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span data-translate="about_feature3">Performance optimization</span>
+                        <div class="backend-specialties">
+                            <h5 data-translate="about_specialties">My Specialties:</h5>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="backend-skill-item">
+                                        <h6><i class="fas fa-cogs me-2"></i> <span data-translate="about_api">API
+                                                Development</span></h6>
+                                        <p class="mb-0" data-translate="about_api_desc">RESTful with focus on
+                                            performance and security</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="backend-skill-item">
+                                        <h6><i class="fas fa-database me-2"></i> <span
+                                                data-translate="about_db">Database Design</span></h6>
+                                        <p class="mb-0" data-translate="about_db_desc">Relational and NoSQL databases,
+                                            optimization and migrations</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="backend-skill-item">
+                                        <h6><i class="fas fa-cloud me-2"></i> <span data-translate="about_cloud">Cloud
+                                                Architecture</span></h6>
+                                        <p class="mb-0" data-translate="about_cloud_desc">Microservices,
+                                            containerization and cloud deployments</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="backend-skill-item">
+                                        <h6><i class="fas fa-shield-alt me-2"></i> <span
+                                                data-translate="about_security">System Security</span></h6>
+                                        <p class="mb-0" data-translate="about_security_desc">Authentication,
+                                            authorization and data protection</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="about-cta">
+                        <div class="about-cta mt-4">
                             <a href="#contact" class="btn btn-primary me-3" data-translate="about_hire">Hire Me</a>
                             <a href="./Curriculo_Alan_Zayon (1).pdf" download class="btn btn-outline-light">
                                 <i class="fas fa-download me-2"></i><span data-translate="about_cv">Download CV</span>
@@ -392,71 +522,201 @@
             <div class="section-header">
                 <h2 data-translate="projects_title">My Projects</h2>
                 <div class="section-divider"></div>
-                <p data-translate="projects_description">Here are some of my recent projects. Each one was carefully crafted to solve specific problems.</p>
+                <p data-translate="projects_description">Here are some of my recent backend projects. Each solution was
+                    architected for scalability, performance and maintainability.</p>
             </div>
 
             <div class="row projects-container">
-                <!-- Project 1 -->
-                <div class="col-lg-6">
-                    <div class="project-card">
+                <!-- Projeto 1: API de Conversão de PDF → CSV para Domínio -->
+                <div class="col-lg-4 mb-4">
+                    <div class="project-card h-100">
                         <div class="project-image">
                             <img src="./images/Captura de tela 2025-08-27 164834.png"
-                                alt="Authorization System" class="img-fluid">
-                            <div class="project-links">
-                                <a href="https://pdftoexcel.netlify.app/access" target="_blank" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> <span data-translate="projects_live">Live Demo</span>
-                                </a>
-                                <a href="https://github.com/AlanZayon/ApiPdfCsv" target="_blank"
-                                    class="project-link">
-                                    <i class="fab fa-github"></i> <span data-translate="projects_code">View Code</span>
-                                </a>
+                                alt="API de Conversão PDF para CSV" class="img-fluid">
+                            <div class="api-badges mt-2">
+                                <span class="api-badge">Node.js</span>
+                                <span class="api-badge">TypeScript</span>
+                                <span class="api-badge">Express.js</span>
+                                <span class="api-badge">Clean Architecture</span>
                             </div>
                         </div>
                         <div class="project-content">
-                            <h3 data-translate="project1_title">Federal Revenue PDF Processing System</h3>
-                            <p data-translate="project1_description">A .NET 8 API that processes Brazilian Federal Revenue PDFs (DARF and DAS), extracts financial data, generates structured CSV/Excel reports, and provides REST endpoints for file upload and download. Built with iTextSharp and Serilog for PDF handling and logging.</p>
-                            <div class="project-tech">
-                                <span>Vue</span>
-                                <span>TailWind</span>
-                                <span>.NET</span>
-                                <span>ASP.NET Core</span>
-                                <span>PostgreSQL</span>
+                            <h3 data-translate="project1_title">API de Conversão PDF → CSV para Domínio</h3>
+                            <p data-translate="project1_description">API backend que converte automaticamente
+                                comprovantes DAS/DARF em PDF para arquivos CSV prontos para importação no sistema
+                                contábil Domínio. Implementa Clean Architecture e processamento assíncrono de
+                                documentos.</p>
+
+                            <div class="backend-features">
+                                <h6 data-translate="projects_features">Principais Funcionalidades:</h6>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project1_feature1">Upload de PDF via API REST</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project1_feature2">Extração e parsing de dados de
+                                            comprovantes</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project1_feature3">Geração de CSV formatado para
+                                            Domínio</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project1_feature4">Clean Architecture e DDD</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project1_feature5">Middleware de upload com Multer</span>
+                                    </li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project1_feature6">Logging e tratamento de erros</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="project-tech mt-3">
+                                <span class="tech-tag">Node.js 18+</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">Multer</span>
+                                <span class="tech-tag">pdf-parse</span>
+                                <span class="tech-tag">exceljs</span>
+                            </div>
+
+                            <div class="project-links-container">
+                                <a href="https://front-das-darf.netlify.app/" target="_blank"
+                                    class="project-link-btn demo">
+                                    <i class="fas fa-external-link-alt"></i> <span data-translate="projects_live">Live
+                                        Demo</span>
+                                </a>
+                                <a href="https://github.com/AlanZayon/api-pdf-to-excel" target="_blank"
+                                    class="project-link-btn code">
+                                    <i class="fab fa-github"></i> <span data-translate="projects_code">View Code</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="col-lg-6">
-                    <div class="project-card">
+                <!-- Projeto 2: Sistema de Gerenciamento de Funcionários -->
+                <div class="col-lg-4 mb-4">
+                    <div class="project-card h-100">
                         <div class="project-image">
                             <img src="./images/Captura de tela 2025-08-26 121844.png" alt="Employee Management System"
                                 class="img-fluid">
-                            <div class="project-links">
-                                <a href="https://interface-sistema-maranguape.vercel.app/" target="_blank"
-                                    class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> <span data-translate="projects_live">Live Demo</span>
-                                </a>
-                                <a href="https://github.com/AlanZayon/interface-sistema-maranguape" target="_blank"
-                                    class="project-link">
-                                    <i class="fab fa-github"></i> <span data-translate="projects_code">View Code</span>
-                                </a>
+                            <div class="api-badges mt-2">
+                                <span class="api-badge">Node.js</span>
+                                <span class="api-badge">Express</span>
+                                <span class="api-badge">MongoDB</span>
+                                <span class="api-badge">React</span>
                             </div>
                         </div>
                         <div class="project-content">
                             <h3 data-translate="project2_title">Employee Management System</h3>
-                            <p data-translate="project2_description">Full-stack CRUD application for employee management with intuitive interface. Features include real-time data updates, search functionality, and responsive design.</p>
-                            <div class="project-tech">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>Express</span>
-                                <span>MongoDB</span>
-                                <span>Bootstrap</span>
+                            <p data-translate="project2_description">Full-stack application for employee management with
+                                organizational chart functionality. Features include department hierarchy visualization,
+                                employee profiles, and role-based access control.</p>
+
+                            <div class="backend-features">
+                                <h6 data-translate="projects_features">Key Features:</h6>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project2_feature1">Organizational chart visualization</span>
+                                    </li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project2_feature2">Role-based authentication</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project2_feature3">Real-time updates</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project2_feature4">Department management</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="project-tech mt-3">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Bootstrap</span>
+                            </div>
+
+                            <div class="project-links-container">
+                                <a href="https://interface-sistema-maranguape.vercel.app/" target="_blank"
+                                    class="project-link-btn demo">
+                                    <i class="fas fa-external-link-alt"></i> <span data-translate="projects_live">Live
+                                        Demo</span>
+                                </a>
+                                <a href="https://github.com/AlanZayon/api-maranguape" target="_blank"
+                                    class="project-link-btn code">
+                                    <i class="fab fa-github"></i> <span data-translate="projects_code">View Code</span>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3: Módulo OFX da ApiPdfCsv -->
+                <div class="col-lg-4 mb-4">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="./images/Captura de tela 2025-12-03 184551.png" alt="ApiPdfCsv - Módulo OFX" class="img-fluid">
+                            <div class="api-badges mt-2">
+                                <span class="api-badge">.NET 8</span>
+                                <span class="api-badge">ASP.NET Core</span>
+                                <span class="api-badge">Entity Framework</span>
+                                <span class="api-badge">JWT</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 data-translate="project3_title">Módulo OFX da ApiPdfCsv</h3>
+                            <p data-translate="project3_description">Módulo especializado da ApiPdfCsv para
+                                processamento de extratos bancários OFX. Extrai transações, implementa classificação
+                                automática com aprendizado por usuário/CNPJ e gera CSVs padronizados para sistemas
+                                contábeis.</p>
+
+                            <div class="backend-features">
+                                <h6 data-translate="projects_features">Principais Funcionalidades:</h6>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project3_feature1">Parsing de arquivos OFX (SGML)</span>
+                                    </li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project3_feature2">Classificação automática com aprendizado
+                                            por histórico</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project3_feature3">Classificação assistida para transações
+                                            não mapeadas</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project3_feature4">Geração de CSV PGTO e
+                                            PGTO_Finalizado</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project3_feature5">Persistência de classificações por
+                                            usuário/CNPJ</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project3_feature6">Reprocessamento inteligente com
+                                            aprendizado salvo</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="project-tech mt-3">
+                                <span class="tech-tag">C# .NET 8</span>
+                                <span class="tech-tag">ASP.NET Core</span>
+                                <span class="tech-tag">Entity Framework</span>
+                                <span class="tech-tag">JWT</span>
+                                <span class="tech-tag">SQL Server</span>
+                                <span class="tech-tag">Serilog</span>
+                            </div>
+
+                            <div class="project-links-container">
+                                <a href="https://pdftoexcel.netlify.app/" target="_blank" class="project-link-btn demo">
+                                    <i class="fas fa-external-link-alt"></i> <span data-translate="projects_live">Live
+                                        Demo</span>
+                                </a>
+                                <a href="https://github.com/AlanZayon/ApiPdfCsv" target="_blank"
+                                    class="project-link-btn code">
+                                    <i class="fab fa-github"></i> <span data-translate="projects_code">View Code</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div class="text-center mt-5">
                 <a href="https://github.com/AlanZayon" target="_blank" class="btn btn-outline-light">
@@ -472,7 +732,8 @@
             <div class="section-header">
                 <h2 data-translate="contact_title">Get In Touch</h2>
                 <div class="section-divider"></div>
-                <p data-translate="contact_description">Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
+                <p data-translate="contact_description">Looking for a backend developer for your project or team? Let's
+                    discuss how I can help build robust and scalable solutions.</p>
             </div>
 
             <div class="row">
@@ -498,11 +759,19 @@
                             <i class="fas fa-clock"></i>
                             <div>
                                 <h5 data-translate="contact_availability">Availability</h5>
-                                <span data-translate="contact_hours">Monday - Friday: 9am - 6pm</span>
+                                <span data-translate="contact_hours">Available for full-time and contract work</span>
                             </div>
                         </div>
 
-                        <div class="contact-social">
+                        <div class="contact-item">
+                            <i class="fas fa-code"></i>
+                            <div>
+                                <h5 data-translate="contact_specialization">Specialization</h5>
+                                <span data-translate="contact_specialization_desc">Backend Development & APIs</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-social mt-4">
                             <h5 data-translate="contact_follow">Follow Me</h5>
                             <div class="social-links">
                                 <a href="https://github.com/AlanZayon" target="_blank" aria-label="GitHub"><i
@@ -519,26 +788,32 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name" data-translate-placeholder="contact_name" required>
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name"
+                                        data-translate-placeholder="contact_name" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email" data-translate-placeholder="contact_email_placeholder" required>
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                        data-translate-placeholder="contact_email_placeholder" required>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" id="subject" placeholder="Subject" data-translate-placeholder="contact_subject" required>
+                            <input type="text" class="form-control" id="subject" placeholder="Project Type"
+                                data-translate-placeholder="contact_subject" required>
                         </div>
 
                         <div class="form-group">
-                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" data-translate-placeholder="contact_message" required></textarea>
+                            <textarea class="form-control" id="message" rows="6"
+                                placeholder="Tell me about your project, technical requirements, timeline..."
+                                data-translate-placeholder="contact_message" required></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane me-2"></i> <span data-translate="contact_send">Send Message</span>
+                            <i class="fas fa-paper-plane me-2"></i> <span data-translate="contact_send">Send
+                                Message</span>
                         </button>
                     </form>
                 </div>
@@ -553,19 +828,20 @@
                 <div class="col-md-6">
                     <div class="footer-brand">
                         <span>Alan Zayon</span>
-                        <span data-translate="footer_title">Fullstack Developer</span>
+                        <span data-translate="footer_title">Backend Developer</span>
                     </div>
-                    <p class="footer-text" data-translate="footer_text">Creating digital solutions that make a difference.</p>
+                    <p class="footer-text" data-translate="footer_text">Building scalable backend solutions with clean
+                        code and robust architecture.</p>
                 </div>
 
                 <div class="col-md-6">
                     <div class="footer-links">
-                        <h5 data-translate="footer_links">Quick Links</h5>
+                        <h5 data-translate="footer_services">Services</h5>
                         <ul>
-                            <li><a href="#skills" data-translate="nav_skills">Skills</a></li>
-                            <li><a href="#aboutMe" data-translate="nav_about">About</a></li>
-                            <li><a href="#projects" data-translate="nav_projects">Projects</a></li>
-                            <li><a href="#contact" data-translate="nav_contact">Contact</a></li>
+                            <li data-translate="footer_api">API Development</li>
+                            <li data-translate="footer_microservices">Microservices Architecture</li>
+                            <li data-translate="footer_database">Database Design</li>
+                            <li data-translate="footer_cloud">Cloud Solutions</li>
                         </ul>
                     </div>
                 </div>
@@ -597,10 +873,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="./script/script.js"></script>
-    
-    <!-- JavaScript para a funcionalidade de tradução -->
+
+    <!-- JavaScript para a funcionalidade de tradução e documentação -->
     <script>
-        // Dicionários de tradução
+        // Dicionários de tradução atualizados para backend
         const translations = {
             'pt': {
                 // Navegação
@@ -608,63 +884,99 @@
                 'nav_about': 'Sobre',
                 'nav_projects': 'Projetos',
                 'nav_contact': 'Contato',
-                
+
                 // Hero Section
                 'hero_greeting': 'Olá, eu sou',
-                'hero_title': 'Desenvolvedor Fullstack',
-                'hero_description': 'Construo aplicações web modernas e responsivas com tecnologias de ponta.',
+                'hero_title': 'Desenvolvedor Backend',
+                'hero_description': 'Construo APIs escaláveis, seguras e eficientes e sistemas backend com tecnologias modernas.',
                 'hero_hire': 'Contrate-me',
-                'hero_work': 'Ver Trabalhos',
-                
+                'hero_work': 'Ver Projetos',
+
                 // Skills Section
                 'skills_title': 'Minhas Habilidades',
-                'skills_description': 'Trabalhei com uma variedade de tecnologias no mundo do desenvolvimento web. Aqui estão minhas competências principais:',
-                'skills_frontend': 'Frontend',
-                'skills_backend': 'Backend',
+                'skills_description': 'Especializado em desenvolvimento backend, APIs, bancos de dados e arquitetura de sistemas. Aqui estão minhas competências técnicas:',
+                'skills_backend_languages': 'Linguagens Backend',
+                'skills_frameworks': 'Frameworks & APIs',
                 'skills_databases': 'Bancos de Dados',
-                'skills_other': 'Outras Ferramentas & Tecnologias:',
-                'skills_responsive': 'Design Responsivo',
-                
+                'skills_architecture': 'Arquitetura & Padrões',
+                'skills_devops': 'DevOps & Cloud',
+                'skills_other': 'Segurança & Performance:',
+
                 // About Section
                 'about_title': 'Sobre Mim',
-                'about_p1': 'Sou um Desenvolvedor Fullstack apaixonado com expertise em construir aplicações web modernas. Minha jornada na programação começou em 2020, e desde 2023 tenho me focado profundamente em dominar o desenvolvimento full-stack.',
-                'about_p2': 'Especializo-me em criar soluções eficientes e escaláveis usando tecnologias como React, Node.js e MongoDB. Minha abordagem combina excelência técnica com design limpo para entregar experiências excepcionais ao usuário.',
-                'about_feature1': 'Código limpo e eficiente',
-                'about_feature2': 'Design responsivo',
-                'about_feature3': 'Otimização de performance',
+                'about_p1': 'Sou um Desenvolvedor Backend apaixonado, especializado em construir APIs escaláveis, de alto desempenho e sistemas distribuídos. Minha jornada na programação começou em 2020, e desde 2023 tenho me dedicado a dominar o desenvolvimento backend e arquitetura de software.',
+                'about_p2': 'Especializo-me em criar soluções robustas usando tecnologias como .NET Core, Node.js, PostgreSQL e serviços em nuvem. Meu foco está na qualidade do código, performance do sistema e arquitetura segura para entregar serviços backend confiáveis e escaláveis.',
+                'about_specialties': 'Minhas Especialidades:',
+                'about_api': 'Desenvolvimento de APIs',
+                'about_api_desc': 'APIs RESTful com foco em performance e segurança',
+                'about_db': 'Design de Bancos de Dados',
+                'about_db_desc': 'Bancos relacionais e NoSQL, otimização e migrações',
+                'about_cloud': 'Arquitetura Cloud',
+                'about_cloud_desc': 'conteinerização e deploys em nuvem',
+                'about_security': 'Segurança de Sistemas',
+                'about_security_desc': 'Autenticação, autorização e proteção de dados',
                 'about_hire': 'Contrate-me',
                 'about_cv': 'Baixar CV',
                 'about_experience': 'Anos de Experiência',
-                
+
                 // Projects Section
                 'projects_title': 'Meus Projetos',
-                'projects_description': 'Aqui estão alguns dos meus projetos recentes. Cada um foi cuidadosamente elaborado para resolver problemas específicos.',
+                'projects_description': 'Aqui estão alguns dos meus projetos backend recentes. Cada solução foi arquitetada para escalabilidade, performance e manutenibilidade.',
+                'projects_features': 'Principais Funcionalidades:',
                 'projects_live': 'Demo Ao Vivo',
                 'projects_code': 'Ver Código',
+                'projects_docs': 'Documentação',
                 'projects_more': 'Ver Mais no GitHub',
-                'project1_title': 'Sistema de Processamento de PDFs da Receita Federal',
-                'project1_description': 'Uma API .NET 8 que processa PDFs da Receita Federal brasileira (DARF e DAS), extrai dados financeiros, gera relatórios estruturados em CSV/Excel e fornece endpoints REST para upload e download de arquivos. Construída com iTextSharp e Serilog para manipulação de PDF e logging.',
+
+                'project1_title': 'API de Conversão PDF → CSV para Domínio',
+                'project1_description': 'API backend que converte automaticamente comprovantes DAS/DARF em PDF para arquivos CSV prontos para importação no sistema contábil Domínio. Implementa Clean Architecture e processamento assíncrono de documentos.',
+                'project1_feature1': 'Upload de PDF via API REST',
+                'project1_feature2': 'Extração e parsing de dados de comprovantes',
+                'project1_feature3': 'Geração de CSV formatado para Domínio',
+                'project1_feature4': 'Clean Architecture e DDD',
+                'project1_feature5': 'Middleware de upload com Multer',
+                'project1_feature6': 'Logging e tratamento de erros',
+
                 'project2_title': 'Sistema de Gerenciamento de Funcionários',
-                'project2_description': 'Aplicação CRUD full-stack para gerenciamento de funcionários com interface intuitiva. Inclui atualizações de dados em tempo real, funcionalidade de busca e design responsivo.',
-                
+                'project2_description': 'Aplicação full-stack para gerenciamento de funcionários com funcionalidade de organograma. Inclui visualização de hierarquia de departamentos, perfis de funcionários e controle de acesso baseado em funções.',
+                'project2_feature1': 'Visualização de organograma',
+                'project2_feature2': 'Autenticação baseada em funções',
+                'project2_feature3': 'Atualizações em tempo real',
+                'project2_feature4': 'Gerenciamento de departamentos',
+
+                'project3_title': 'Módulo OFX da ApiPdfCsv',
+                'project3_description': 'Módulo especializado da ApiPdfCsv para processamento de extratos bancários OFX. Extrai transações, implementa classificação automática com aprendizado por usuário/CNPJ e gera CSVs padronizados para sistemas contábeis.',
+                'project3_feature1': 'Parsing de arquivos OFX (SGML)',
+                'project3_feature2': 'Classificação automática com aprendizado por histórico',
+                'project3_feature3': 'Classificação assistida para transações não mapeadas',
+                'project3_feature4': 'Geração de CSV PGTO e PGTO_Finalizado',
+                'project3_feature5': 'Persistência de classificações por usuário/CNPJ',
+                'project3_feature6': 'Reprocessamento inteligente com aprendizado salvo',
+
                 // Contact Section
                 'contact_title': 'Entre em Contato',
-                'contact_description': 'Tem um projeto em mente ou quer discutir oportunidades potenciais? Sinta-se à vontade para entrar em contato!',
+                'contact_description': 'Procurando um desenvolvedor backend para seu projeto ou equipe? Vamos discutir como posso ajudar a construir soluções robustas e escaláveis.',
                 'contact_email': 'Email',
                 'contact_location': 'Localização',
                 'contact_availability': 'Disponibilidade',
-                'contact_hours': 'Segunda - Sexta: 9h - 18h',
+                'contact_hours': 'Disponível para trabalho full-time e contrato',
+                'contact_specialization': 'Especialização',
+                'contact_specialization_desc': 'Desenvolvimento Backend & APIs',
                 'contact_follow': 'Siga-me',
                 'contact_name': 'Seu Nome',
                 'contact_email_placeholder': 'Seu Email',
-                'contact_subject': 'Assunto',
-                'contact_message': 'Sua Mensagem',
+                'contact_subject': 'Tipo de Projeto',
+                'contact_message': 'Conte-me sobre seu projeto, requisitos técnicos, prazo...',
                 'contact_send': 'Enviar Mensagem',
-                
+
                 // Footer
-                'footer_title': 'Desenvolvedor Fullstack',
-                'footer_text': 'Criando soluções digitais que fazem a diferença.',
-                'footer_links': 'Links Rápidos',
+                'footer_title': 'Desenvolvedor Backend',
+                'footer_text': 'Construindo soluções backend escaláveis com código limpo e arquitetura robusta.',
+                'footer_services': 'Serviços',
+                'footer_api': 'Desenvolvimento de APIs',
+                'footer_microservices': 'Arquitetura de Microserviços',
+                'footer_database': 'Design de Banco de Dados',
+                'footer_cloud': 'Soluções em Nuvem',
                 'footer_rights': 'Todos os direitos reservados.'
             },
             'en': {
@@ -673,63 +985,98 @@
                 'nav_about': 'About',
                 'nav_projects': 'Projects',
                 'nav_contact': 'Contact',
-                
+
                 // Hero Section
                 'hero_greeting': 'Hello, I\'m',
-                'hero_title': 'Fullstack Developer',
-                'hero_description': 'I build modern, responsive web applications with cutting-edge technologies.',
+                'hero_title': 'Backend Developer',
+                'hero_description': 'I build scalable, secure and efficient APIs and backend systems with modern technologies.',
                 'hero_hire': 'Hire Me',
-                'hero_work': 'View Work',
-                
+                'hero_work': 'View Projects',
+
                 // Skills Section
                 'skills_title': 'My Skills',
-                'skills_description': 'I\'ve worked with a variety of technologies in the web development world. Here are my core competencies:',
-                'skills_frontend': 'Frontend',
-                'skills_backend': 'Backend',
+                'skills_description': 'Specialized in backend development, APIs, databases and system architecture. Here are my technical competencies:',
+                'skills_backend_languages': 'Backend Languages',
+                'skills_frameworks': 'Frameworks & APIs',
                 'skills_databases': 'Databases',
-                'skills_other': 'Other Tools & Technologies:',
-                'skills_responsive': 'Responsive Design',
-                
+                'skills_architecture': 'Architecture & Patterns',
+                'skills_devops': 'DevOps & Cloud',
+                'skills_other': 'Security & Performance:',
+
                 // About Section
                 'about_title': 'About Me',
-                'about_p1': 'I\'m a passionate Fullstack Developer with expertise in building modern web applications. My journey in programming began in 2020, and since 2023 I\'ve been deeply focused on mastering full-stack development.',
-                'about_p2': 'I specialize in creating efficient, scalable solutions using technologies like React, Node.js, and MongoDB. My approach combines technical excellence with clean design to deliver exceptional user experiences.',
-                'about_feature1': 'Clean, efficient code',
-                'about_feature2': 'Responsive design',
-                'about_feature3': 'Performance optimization',
+                'about_p1': 'I\'m a passionate Backend Developer specialized in building scalable, high-performance APIs and distributed systems. My programming journey began in 2020, and since 2023 I\'ve been dedicated to mastering backend development and software architecture.',
+                'about_p2': 'I specialize in creating robust solutions using technologies like .NET Core, Node.js, PostgreSQL and cloud services. My focus is on code quality, system performance and secure architecture to deliver reliable and scalable backend services.',
+                'about_specialties': 'My Specialties:',
+                'about_api': 'API Development',
+                'about_api_desc': 'RESTful APIs with focus on performance and security',
+                'about_db': 'Database Design',
+                'about_db_desc': 'Relational and NoSQL databases, optimization and migrations',
+                'about_cloud': 'Cloud Architecture',
+                'about_cloud_desc': 'containerization and cloud deployments',
+                'about_security': 'System Security',
+                'about_security_desc': 'Authentication, authorization and data protection',
                 'about_hire': 'Hire Me',
                 'about_cv': 'Download CV',
                 'about_experience': 'Years Experience',
-                
+
                 // Projects Section
                 'projects_title': 'My Projects',
-                'projects_description': 'Here are some of my recent projects. Each one was carefully crafted to solve specific problems.',
+                'projects_description': 'Here are some of my recent backend projects. Each solution was architected for scalability, performance and maintainability.',
+                'projects_features': 'Key Features:',
                 'projects_live': 'Live Demo',
                 'projects_code': 'View Code',
                 'projects_more': 'View More on GitHub',
-                'project1_title': 'Federal Revenue PDF Processing System',
-                'project1_description': 'A .NET 8 API that processes Brazilian Federal Revenue PDFs (DARF and DAS), extracts financial data, generates structured CSV/Excel reports, and provides REST endpoints for file upload and download. Built with iTextSharp and Serilog for PDF handling and logging.',
+
+                'project1_title': 'PDF to CSV Converter API for Domínio',
+                'project1_description': 'Backend API that automatically converts DAS/DARF receipts from PDF to CSV files ready for import into the Domínio accounting system. Implements Clean Architecture and async document processing.',
+                'project1_feature1': 'PDF upload via REST API',
+                'project1_feature2': 'Data extraction and parsing from receipts',
+                'project1_feature3': 'Formatted CSV generation for Domínio',
+                'project1_feature4': 'Clean Architecture and DDD',
+                'project1_feature5': 'Upload middleware with Multer',
+                'project1_feature6': 'Logging and error handling',
+
                 'project2_title': 'Employee Management System',
-                'project2_description': 'Full-stack CRUD application for employee management with intuitive interface. Features include real-time data updates, search functionality, and responsive design.',
-                
+                'project2_description': 'Full-stack application for employee management with organizational chart functionality. Features include department hierarchy visualization, employee profiles, and role-based access control.',
+                'project2_feature1': 'Organizational chart visualization',
+                'project2_feature2': 'Role-based authentication',
+                'project2_feature3': 'Real-time updates',
+                'project2_feature4': 'Department management',
+
+                'project3_title': 'OFX Module of ApiPdfCsv',
+                'project3_description': 'Specialized module of ApiPdfCsv for processing OFX bank statements. Extracts transactions, implements automatic classification with user/CNPJ learning, and generates standardized CSVs for accounting systems.',
+                'project3_feature1': 'OFX file parsing (SGML)',
+                'project3_feature2': 'Automatic classification with historical learning',
+                'project3_feature3': 'Assisted classification for unmapped transactions',
+                'project3_feature4': 'PGTO and PGTO_Finalizado CSV generation',
+                'project3_feature5': 'Classification persistence by user/CNPJ',
+                'project3_feature6': 'Intelligent reprocessing with saved learning',
+
                 // Contact Section
                 'contact_title': 'Get In Touch',
-                'contact_description': 'Have a project in mind or want to discuss potential opportunities? Feel free to reach out!',
+                'contact_description': 'Looking for a backend developer for your project or team? Let\'s discuss how I can help build robust and scalable solutions.',
                 'contact_email': 'Email',
                 'contact_location': 'Location',
                 'contact_availability': 'Availability',
-                'contact_hours': 'Monday - Friday: 9am - 6pm',
+                'contact_hours': 'Available for full-time and contract work',
+                'contact_specialization': 'Specialization',
+                'contact_specialization_desc': 'Backend Development & APIs',
                 'contact_follow': 'Follow Me',
                 'contact_name': 'Your Name',
                 'contact_email_placeholder': 'Your Email',
-                'contact_subject': 'Subject',
-                'contact_message': 'Your Message',
+                'contact_subject': 'Project Type',
+                'contact_message': 'Tell me about your project, technical requirements, timeline...',
                 'contact_send': 'Send Message',
-                
+
                 // Footer
-                'footer_title': 'Fullstack Developer',
-                'footer_text': 'Creating digital solutions that make a difference.',
-                'footer_links': 'Quick Links',
+                'footer_title': 'Backend Developer',
+                'footer_text': 'Building scalable backend solutions with clean code and robust architecture.',
+                'footer_services': 'Services',
+                'footer_api': 'API Development',
+                'footer_microservices': 'Microservices Architecture',
+                'footer_database': 'Database Design',
+                'footer_cloud': 'Cloud Solutions',
                 'footer_rights': 'All rights reserved.'
             }
         };
@@ -743,7 +1090,7 @@
                     element.textContent = translations[lang][key];
                 }
             });
-            
+
             // Atualizar placeholders
             document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
                 const key = element.getAttribute('data-translate-placeholder');
@@ -751,10 +1098,10 @@
                     element.placeholder = translations[lang][key];
                 }
             });
-            
+
             // Atualizar o idioma atual no botão
             document.getElementById('currentLanguage').textContent = lang.toUpperCase();
-            
+
             // Atualizar a classe active nas opções de idioma
             document.querySelectorAll('.language-option').forEach(option => {
                 if (option.getAttribute('data-lang') === lang) {
@@ -763,48 +1110,170 @@
                     option.classList.remove('active');
                 }
             });
-            
+
             // Salvar a preferência de idioma no localStorage
             localStorage.setItem('preferredLanguage', lang);
-            
+
             // Atualizar o atributo lang do html
             document.documentElement.lang = lang;
         }
 
+        // Funções para mostrar/ocultar documentação
+        function showDocumentation(docId) {
+            // Ocultar todas as documentações
+            document.querySelectorAll('.documentation-modal').forEach(doc => {
+                doc.style.display = 'none';
+            });
+
+            // Mostrar a documentação selecionada
+            const docElement = document.getElementById(docId);
+            if (docElement) {
+                docElement.style.display = 'block';
+
+                // Rolagem suave para a documentação
+                docElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function hideDocumentation() {
+            // Ocultar todas as documentações
+            document.querySelectorAll('.documentation-modal').forEach(doc => {
+                doc.style.display = 'none';
+            });
+        }
+
         // Inicializar o seletor de idioma
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const languageBtn = document.getElementById('languageBtn');
             const languageOptions = document.getElementById('languageOptions');
-            
+
             // Alternar a exibição das opções de idioma
-            languageBtn.addEventListener('click', function(e) {
+            languageBtn.addEventListener('click', function (e) {
                 e.stopPropagation();
                 languageOptions.classList.toggle('show');
             });
-            
+
             // Fechar o menu de idiomas ao clicar fora
-            document.addEventListener('click', function() {
+            document.addEventListener('click', function () {
                 languageOptions.classList.remove('show');
             });
-            
+
             // Prevenir que o clique no menu feche o menu
-            languageOptions.addEventListener('click', function(e) {
+            languageOptions.addEventListener('click', function (e) {
                 e.stopPropagation();
             });
-            
+
             // Mudar idioma ao clicar em uma opção
             document.querySelectorAll('.language-option').forEach(option => {
-                option.addEventListener('click', function() {
+                option.addEventListener('click', function () {
                     const lang = this.getAttribute('data-lang');
                     applyTranslation(lang);
                     languageOptions.classList.remove('show');
                 });
             });
-            
+
             // Carregar o idioma salvo ou usar o padrão (português)
             const savedLanguage = localStorage.getItem('preferredLanguage') || 'pt';
             applyTranslation(savedLanguage);
+
+            // Configurar envio do formulário de contato
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Aqui você pode adicionar a lógica para enviar o formulário
+                    // Por exemplo, usando EmailJS, Formspree ou seu próprio backend
+
+                    // Simulação de envio bem-sucedido
+                    const currentLang = localStorage.getItem('preferredLanguage') || 'pt';
+                    const successMessage = currentLang === 'pt'
+                        ? 'Mensagem enviada com sucesso! Entrarei em contato em breve.'
+                        : 'Message sent successfully! I will contact you soon.';
+
+                    alert(successMessage);
+                    contactForm.reset();
+                });
+            }
         });
+
+        // Função para rolagem suave
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                window.scrollTo({
+                    top: element.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Adicionar evento ao botão Hire Me
+        const hireMeBtn = document.querySelector('button[onclick="scrollToSection(\'contact\')"]');
+        if (hireMeBtn) {
+            hireMeBtn.addEventListener('click', function () {
+                scrollToSection('contact');
+            });
+        }
+
+        // Botão de voltar ao topo
+        const backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.style.display = 'flex';
+                } else {
+                    backToTopBtn.style.display = 'none';
+                }
+            });
+
+            backToTopBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Estilos CSS adicionais para as documentações
+        const style = document.createElement('style');
+        style.textContent = `
+            .documentation-modal {
+                background: white;
+                border-radius: 10px;
+                padding: 20px;
+                margin-top: 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                border-left: 4px solid #6c5ce7;
+            }
+            
+            .documentation-modal h4 {
+                color: #6c5ce7;
+                margin-bottom: 15px;
+            }
+            
+            .documentation-modal ul {
+                padding-left: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .documentation-modal li {
+                margin-bottom: 5px;
+            }
+            
+            .tech-tag {
+                background: rgba(108, 92, 231, 0.1);
+                color: #6c5ce7;
+                padding: 3px 8px;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                display: inline-block;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 
