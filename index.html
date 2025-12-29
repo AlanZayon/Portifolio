@@ -20,7 +20,6 @@
 
     <!-- CSS para o seletor de idioma -->
     <style>
-        
         .language-selector {
             position: relative;
             margin-left: 20px;
@@ -189,6 +188,20 @@
             color: #6c5ce7;
             margin-right: 10px;
             margin-top: 2px;
+        }
+
+        /* Estilo para o botão de download de currículo */
+        .cv-download-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .cv-note {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -506,10 +519,12 @@
 
                         <div class="about-cta mt-4">
                             <a href="#contact" class="btn btn-primary me-3" data-translate="about_hire">Hire Me</a>
-                            <a href="./Curriculo_Alan_Zayon (1).pdf" download class="btn btn-outline-light">
+                            <!-- Botão de download de currículo que muda com o idioma -->
+                            <button id="cvDownloadBtn" class="btn btn-outline-light">
                                 <i class="fas fa-download me-2"></i><span data-translate="about_cv">Download CV</span>
-                            </a>
+                            </button>
                         </div>
+                        <p class="cv-note" id="cvNote" data-translate="cv_note">CV disponível em português</p>
                     </div>
                 </div>
             </div>
@@ -644,7 +659,6 @@
                                     class="project-link-btn code">
                                     <i class="fab fa-github"></i> <span data-translate="projects_code">View Code</span>
                                 </a>
-
                             </div>
                         </div>
                     </div>
@@ -716,7 +730,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div class="text-center mt-5">
                 <a href="https://github.com/AlanZayon" target="_blank" class="btn btn-outline-light">
@@ -874,7 +887,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="./script/script.js"></script>
 
-    <!-- JavaScript para a funcionalidade de tradução e documentação -->
+    <!-- JavaScript para a funcionalidade de tradução e download de currículo -->
     <script>
         // Dicionários de tradução atualizados para backend
         const translations = {
@@ -918,6 +931,7 @@
                 'about_hire': 'Contrate-me',
                 'about_cv': 'Baixar CV',
                 'about_experience': 'Anos de Experiência',
+                'cv_note': 'CV disponível em português',
 
                 // Projects Section
                 'projects_title': 'Meus Projetos',
@@ -1019,6 +1033,7 @@
                 'about_hire': 'Hire Me',
                 'about_cv': 'Download CV',
                 'about_experience': 'Years Experience',
+                'cv_note': 'CV available in English',
 
                 // Projects Section
                 'projects_title': 'My Projects',
@@ -1081,8 +1096,13 @@
             }
         };
 
+        // Variável para controlar o idioma atual
+        let currentLanguage = 'pt';
+
         // Função para aplicar traduções
         function applyTranslation(lang) {
+            currentLanguage = lang;
+            
             // Atualizar o texto dos elementos com data-translate
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
@@ -1118,6 +1138,28 @@
             document.documentElement.lang = lang;
         }
 
+        // Função para fazer download do currículo correto
+        function downloadCV() {
+            let cvFile;
+            let cvFileName;
+            
+            if (currentLanguage === 'pt') {
+                cvFile = 'Alan Zayon - Currículo.pdf';
+                cvFileName = 'Alan_Zayon_Curriculo.pdf';
+            } else {
+                cvFile = 'Alan Zayon - Resume.pdf';
+                cvFileName = 'Alan_Zayon_Resume.pdf';
+            }
+            
+            // Criar um link temporário para o download
+            const link = document.createElement('a');
+            link.href = cvFile;
+            link.download = cvFileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
         // Funções para mostrar/ocultar documentação
         function showDocumentation(docId) {
             // Ocultar todas as documentações
@@ -1146,6 +1188,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             const languageBtn = document.getElementById('languageBtn');
             const languageOptions = document.getElementById('languageOptions');
+            const cvDownloadBtn = document.getElementById('cvDownloadBtn');
 
             // Alternar a exibição das opções de idioma
             languageBtn.addEventListener('click', function (e) {
@@ -1171,6 +1214,11 @@
                     languageOptions.classList.remove('show');
                 });
             });
+
+            // Configurar o botão de download de CV
+            if (cvDownloadBtn) {
+                cvDownloadBtn.addEventListener('click', downloadCV);
+            }
 
             // Carregar o idioma salvo ou usar o padrão (português)
             const savedLanguage = localStorage.getItem('preferredLanguage') || 'pt';
