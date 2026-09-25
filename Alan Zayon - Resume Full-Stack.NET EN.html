@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Alan Zayon da Silva Maciel" />
+  <meta name="description" content="Resume of Alan Zayon da Silva Maciel, Full-Stack .NET Developer (C#, ASP.NET Core, Angular, Vue, REST APIs)." />
+  <title>Alan Zayon — Full-Stack .NET Developer</title>
+  <style>
+    :root { --ink:#2b2b2b; --link:#2c4c7a; --muted:#6b6b6b; --pill:#cfe6fb; --date:#e8f2fd; --page:#ffffff; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html, body { background:#d9dce2; color:var(--ink); font-family:Arial, Helvetica, sans-serif; }
+    .toolbar { position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; padding:12px 16px; background:#1f2933; color:#fff; font-size:13px; }
+    .toolbar button { appearance:none; border:0; border-radius:999px; background:#7dd3fc; color:#0f172a; font-weight:700; font-size:13px; padding:8px 16px; cursor:pointer; }
+    .toolbar button:hover { background:#bae6fd; }
+    .sheet { width:210mm; margin:16px auto 24px; background:var(--page); box-shadow:0 8px 28px rgba(15,23,42,.18); padding:9mm 12mm 10mm; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    h1 { font-family:Georgia,"Times New Roman",serif; font-size:22pt; font-weight:700; line-height:1.15; }
+    .headline { margin-top:1.2mm; font-size:10pt; font-weight:700; }
+    .contact { margin-top:1.8mm; font-size:9pt; line-height:1.4; }
+    .contact a { color:var(--link); text-decoration:none; font-weight:700; }
+    .sep { font-weight:400; }
+    h2 { display:inline-block; margin:2.6mm 0 1.6mm; background:var(--pill); border-radius:999px; padding:1.5mm 3mm 1.4mm; font-size:9pt; font-weight:700; }
+    .summary { background:var(--pill); border-radius:10px; padding:2.6mm 3.2mm 2.8mm; font-size:9.6pt; line-height:13.6pt; }
+    .skills p { font-size:9.5pt; line-height:13.6pt; margin-bottom:1.2mm; }
+    .skills p:last-child { margin-bottom:0; }
+    .job-block { margin-bottom:2.6mm; }
+    .job-title { width:100%; background:var(--pill); border-radius:10px; padding:1.6mm 3.2mm 1.8mm; }
+    .job-title h3 { font-family:Georgia,"Times New Roman",serif; font-size:12pt; font-weight:700; line-height:1.2; }
+    .job-title h3 em { font-style:italic; font-weight:400; }
+    .job-meta { margin-top:1.4mm; font-size:9pt; }
+    .job-meta .dates { display:inline-block; background:var(--date); color:var(--muted); border-radius:999px; padding:1mm 2.6mm 0.9mm; font-size:8.5pt; }
+    ul.bullets { margin:1.8mm 0 0 5mm; padding:0; list-style-type:disc; }
+    ul.bullets li { margin-bottom:1.5mm; font-size:9.6pt; line-height:13.4pt; }
+    .edu p, .lang p { font-size:9.6pt; line-height:13.8pt; }
+    .edu { margin-bottom:0.4mm; }
+    .project-block { margin-bottom:2mm; }
+    .project-block h3 { font-family:Georgia,"Times New Roman",serif; font-size:10.5pt; font-weight:700; line-height:1.25; }
+    .project-block h3 a { color:var(--link); text-decoration:none; font-weight:700; }
+    .project-block .stack { margin-top:0.6mm; font-size:8.5pt; color:var(--muted); }
+    .project-block ul.bullets { margin-top:1.2mm; }
+    @media print {
+      html, body { background:#fff; height:auto; }
+      .toolbar { display:none !important; }
+      .sheet { width:auto; margin:0; box-shadow:none; padding:0; overflow:visible; }
+      @page { size:A4; margin:10mm 11mm; }
+      h1, .headline, .contact, h2, .summary, .skills p,
+      .job-block, .job-title, .job-meta, ul.bullets li,
+      .project-block, .edu, .lang { break-inside:avoid; page-break-inside:avoid; }
+      h2, .job-title, .job-meta, .project-block h3 { break-after:avoid; page-break-after:avoid; }
+      header, section.skills, .summary { break-inside:avoid; page-break-inside:avoid; }
+      ul.bullets li { orphans:3; widows:3; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <span>Full-Stack .NET (EN) — print: A4 · background graphics on · <strong>uncheck “Headers and footers”</strong>.</span>
+    <button type="button" onclick="window.print()">Save as PDF</button>
+  </div>
+  <script>
+    (function () {
+      var previousTitle = document.title;
+      window.addEventListener("beforeprint", function () { document.title = " "; });
+      window.addEventListener("afterprint", function () { document.title = previousTitle; });
+    })();
+  </script>
+  <main class="sheet">
+    <header>
+      <h1>Alan Zayon da Silva Maciel</h1>
+      <p class="headline">Full-Stack .NET Developer | C# | ASP.NET Core | Angular | Vue | REST APIs</p>
+      <p class="contact">
+        Fortaleza, Ceará, Brazil
+        <span class="sep"> | </span>
+        <a href="tel:+5585991689582">+55 (85) 99168-9582</a>
+        <span class="sep"> | </span>
+        <a href="mailto:alanzayon72@gmail.com">alanzayon72@gmail.com</a>
+        <span class="sep"> | </span>
+        <a href="https://www.linkedin.com/in/alanzayon/">LinkedIn</a>
+        <span class="sep"> | </span>
+        <a href="https://github.com/AlanZayon">GitHub</a>
+        <span class="sep"> | </span>
+        <a href="https://alanzayon.github.io/Portifolio/">Portfolio</a>
+      </p>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary">
+        Full-Stack developer focused on C#, .NET 8/9, and ASP.NET Core, building REST APIs and Angular/Vue interfaces for corporate event, access-control, and fiscal products.
+        I work end-to-end: business rules, per-tenant data isolation, asynchronous processing (queues and background jobs), and system integrations — including webhooks, DAS/DARF/OFX reconciliation, and flows tied to turnstiles and kiosks.
+        Seeking Full-Stack .NET / C# roles where I deliver the API, the operations UI, and end-to-end flow reliability.
+      </p>
+    </section>
+
+    <section class="skills">
+      <h2>Technical Skills</h2>
+      <p><strong>Backend:</strong> C#, .NET 9, .NET 8, ASP.NET Core, REST APIs</p>
+      <p><strong>Frontend:</strong> Angular 19, Vue 3, TypeScript, HTML, CSS; React.js (when the product requires it)</p>
+      <p><strong>Data:</strong> PostgreSQL, SQL Server, MongoDB, Redis</p>
+      <p><strong>Messaging &amp; processing:</strong> Azure Service Bus (queues and topics), Hangfire, background jobs; BullMQ (Node.js)</p>
+      <p><strong>Cloud &amp; DevOps:</strong> Docker, GitHub Actions, CI/CD, AWS S3, Git</p>
+      <p><strong>Engineering:</strong> multi-tenancy, RBAC, idempotency, webhooks, fiscal reconciliation (DAS/DARF/OFX)</p>
+      <p><strong>Also used:</strong> Node.js, NestJS</p>
+    </section>
+
+    <section>
+      <h2>Work Experience</h2>
+
+      <article class="job-block">
+        <div class="job-title">
+          <h3>Full-Stack Developer <em>— ASC Solutions</em></h3>
+        </div>
+        <p class="job-meta">
+          Rio de Janeiro, Brazil
+          <span class="sep"> | </span>
+          <span class="dates"><time datetime="2026-02">February 2026</time> – Present</span>
+        </p>
+        <ul class="bullets">
+          <li>Built the facial-biometrics event platform in Angular 19, C#, .NET 9, and SQL Server, including a production partner API for face queries with token auth, IP whitelist, and rate limiting — each tenant can access only their own data.</li>
+          <li>Moved imports of up to 30,000 records from the browser into background jobs with validation, failure reports, and batch resume, freeing the operations UI from heavy processing.</li>
+          <li>Implemented Azure Service Bus publishing (queue or topic per event) to decouple the event flow from local access databases used by turnstiles, including after ticket purchase.</li>
+          <li>On the members club, implemented idempotency for payment webhooks (paid, canceled, refund) and a recurring-card job for overdue installments.</li>
+        </ul>
+      </article>
+
+      <article class="job-block">
+        <div class="job-title">
+          <h3>Full-Stack Developer (Freelance) <em>— Mitfokus Medical Accounting</em></h3>
+        </div>
+        <p class="job-meta">
+          Campinas, Brazil <span class="sep"> · </span> Remote
+          <span class="sep"> | </span>
+          <span class="dates"><time datetime="2026-02">February 2026</time> – Present</span>
+        </p>
+        <ul class="bullets">
+          <li>Evolved the production fiscal product (Vue 3, .NET 8, C#, PostgreSQL), replacing one-off per-client mapping with reusable chart-of-accounts profiles.</li>
+          <li>Moved PDF/OFX processing to Hangfire, with files on AWS S3 and Redis cache — batches of up to 10 files, uploads up to 100 MB, and OFX files with tens of thousands of transactions.</li>
+          <li>Implemented OFX classification by groups, a virtualized UI list, and unit/integration tests; automated Simples Nacional, DCTFWEB (INSS/IRRF), and annual partners’ drawings history with rules by tax ID and bank.</li>
+        </ul>
+      </article>
+
+      <article class="job-block">
+        <div class="job-title">
+          <h3>Full-Stack Developer (Freelance) <em>— Agilize Accounting</em></h3>
+        </div>
+        <p class="job-meta">
+          Salvador, Brazil <span class="sep"> · </span> Remote
+          <span class="sep"> | </span>
+          <span class="dates"><time datetime="2025-05">May 2025</time> – <time datetime="2025-10">October 2025</time></span>
+        </p>
+        <ul class="bullets">
+          <li>Built end-to-end DAS/DARF and OFX reconciliation in Vue, .NET 8, C#, and PostgreSQL, generating Domínio-standard CSV with configurable debit/credit codes.</li>
+          <li>Handled SGML OFX with 8,000+ transactions, with pending items and term reuse — ~10 hours/month less manual posting, per client measurement.</li>
+        </ul>
+      </article>
+
+      <article class="job-block">
+        <div class="job-title">
+          <h3>Full-Stack Developer <em>— Municipality of Maranguape</em></h3>
+        </div>
+        <p class="job-meta">
+          Maranguape, Brazil
+          <span class="sep"> | </span>
+          <span class="dates"><time datetime="2024-11">November 2024</time> – <time datetime="2025-11">November 2025</time></span>
+        </p>
+        <ul class="bullets">
+          <li>Built the public-servant staffing system in React, Node.js, TypeScript, and MongoDB for up to 10,000 people — departments, nominations, appointed positions, and dashboards for chiefs of staff and teams.</li>
+          <li>Optimized queries with MongoDB aggregations, cutting API response time from ~1.6 s to 50 ms; branded reports and media on AWS S3. Later evolution moved the API to multi-tenant NestJS with Redis, RBAC, and BullMQ.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Personal Projects</h2>
+
+      <article class="project-block">
+        <h3>GameScore — <a href="https://github.com/AlanZayon/GameScore-Project">github.com/AlanZayon/GameScore-Project</a></h3>
+        <p class="stack">Next.js 16 · ASP.NET Core 10 · EF Core · Hangfire · PostgreSQL · Redis · Docker</p>
+        <ul class="bullets">
+          <li>Web platform to discover and rate games by player recommendations. Next.js + ASP.NET Core modular monolith with Wilson-score ranking, full-text search on PostgreSQL, Hangfire jobs, and shared scoring maths with golden tests.</li>
+        </ul>
+      </article>
+
+      <article class="project-block">
+        <h3>Smart RPG Campaign Generator — <a href="https://github.com/AlanZayon/python-gerador-inteligente-RPG">github.com/AlanZayon/python-gerador-inteligente-RPG</a></h3>
+        <p class="stack">Python · Flask · Redis · PostgreSQL · AWS S3 · FAISS (RAG) · JWT</p>
+        <ul class="bullets">
+          <li>Tool for GMs: turns a rules PDF into a playable campaign (overview, sessions, appendix). Async API with Redis queue, worker (RAG/FAISS → plan → writing → review), job idempotency, and Markdown published to S3.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="edu">
+      <h2>Education</h2>
+      <p><strong>Associate Degree in Systems Analysis and Development</strong> — Estácio, expected <time datetime="2027-07">July 2027</time></p>
+    </section>
+    <section class="lang">
+      <h2>Languages</h2>
+      <p>Portuguese — Native <span class="sep"> | </span> English — Technical reading and writing (docs, PRs, and APIs)</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Alan Zayon da Silva Maciel" />
+  <meta name="description" content="Currículo de Alan Zayon da Silva Maciel, Desenvolvedor Full-Stack .NET (C#, ASP.NET Core, Angular, Vue, APIs REST)." />
+  <title>Alan Zayon — Desenvolvedor Full-Stack .NET</title>
+  <style>
+    :root { --ink:#2b2b2b; --link:#2c4c7a; --muted:#6b6b6b; --pill:#cfe6fb; --date:#e8f2fd; --page:#ffffff; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html, body { background:#d9dce2; color:var(--ink); font-family:Arial, Helvetica, sans-serif; }
+    .toolbar { position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; padding:12px 16px; background:#1f2933; color:#fff; font-size:13px; }
+    .toolbar button { appearance:none; border:0; border-radius:999px; background:#7dd3fc; color:#0f172a; font-weight:700; font-size:13px; padding:8px 16px; cursor:pointer; }
+    .toolbar button:hover { background:#bae6fd; }
+    .sheet { width:210mm; margin:16px auto 24px; background:var(--page); box-shadow:0 8px 28px rgba(15,23,42,.18); padding:9mm 12mm 10mm; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    h1 { font-family:Georgia,"Times New Roman",serif; font-size:22pt; font-weight:700; line-height:1.15; }
+    .headline { margin-top:1.2mm; font-size:10pt; font-weight:700; }
+    .contact { margin-top:1.8mm; font-size:9pt; line-height:1.4; }
+    .contact a { color:var(--link); text-decoration:none; font-weight:700; }
+    .sep { font-weight:400; }
+    h2 { display:inline-block; margin:2.6mm 0 1.6mm; background:var(--pill); border-radius:999px; padding:1.5mm 3mm 1.4mm; font-size:9pt; font-weight:700; }
+    .summary { background:var(--pill); border-radius:10px; padding:2.6mm 3.2mm 2.8mm; font-size:9.6pt; line-height:13.6pt; }
+    .skills p { font-size:9.5pt; line-height:13.6pt; margin-bottom:1.2mm; }
+    .skills p:last-child { margin-bottom:0; }
+    .job-block { margin-bottom:2.6mm; }
+    .job-title { width:100%; background:var(--pill); border-radius:10px; padding:1.6mm 3.2mm 1.8mm; }
+    .job-title h3 { font-family:Georgia,"Times New Roman",serif; font-size:12pt; font-weight:700; line-height:1.2; }
+    .job-title h3 em { font-style:italic; font-weight:400; }
+    .job-meta { margin-top:1.4mm; font-size:9pt; }
+    .job-meta .dates { display:inline-block; background:var(--date); color:var(--muted); border-radius:999px; padding:1mm 2.6mm 0.9mm; font-size:8.5pt; }
+    ul.bullets { margin:1.8mm 0 0 5mm; padding:0; list-style-type:disc; }
+    ul.bullets li { margin-bottom:1.5mm; font-size:9.6pt; line-height:13.4pt; }
+    .edu p, .lang p { font-size:9.6pt; line-height:13.8pt; }
+    .edu { margin-bottom:0.4mm; }
+    .project-block { margin-bottom:2mm; }
+    .project-block h3 { font-family:Georgia,"Times New Roman",serif; font-size:10.5pt; font-weight:700; line-height:1.25; }
+    .project-block h3 a { color:var(--link); text-decoration:none; font-weight:700; }
+    .project-block .stack { margin-top:0.6mm; font-size:8.5pt; color:var(--muted); }
+    .project-block ul.bullets { margin-top:1.2mm; }
+    @media print {
+      html, body { background:#fff; height:auto; }
+      .toolbar { display:none !important; }
+      .sheet {
+        width:auto;
+        margin:0;
+        box-shadow:none;
+        padding:0;
+        overflow:visible;
+      }
+      @page { size:A4; margin:10mm 11mm; }
+      h1, .headline, .contact, h2, .summary, .skills p,
+      .job-block, .job-title, .job-meta, ul.bullets li,
+      .project-block, .edu, .lang {
+        break-inside:avoid;
+        page-break-inside:avoid;
+      }
+      h2, .job-title, .job-meta, .project-block h3 {
+        break-after:avoid;
+        page-break-after:avoid;
+      }
+      header, section.skills, .summary {
+        break-inside:avoid;
+        page-break-inside:avoid;
+      }
+      ul.bullets li {
+        orphans:3;
+        widows:3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <span>Versão Full-Stack .NET — ao imprimir: A4 · gráficos de fundo ligados · <strong>desmarque “Cabeçalhos e rodapés”</strong> (senão aparecem URL, data e 1/2).</span>
+    <button type="button" onclick="window.print()">Salvar como PDF</button>
+  </div>
+  <script>
+    (function () {
+      var previousTitle = document.title;
+      window.addEventListener("beforeprint", function () { document.title = " "; });
+      window.addEventListener("afterprint", function () { document.title = previousTitle; });
+    })();
+  </script>
+  <main class="sheet">
+    <header>
+      <h1>Alan Zayon da Silva Maciel</h1>
+      <p class="headline">Desenvolvedor Full-Stack .NET | C# | ASP.NET Core | Angular | Vue | APIs REST</p>
+      <p class="contact">
+        Fortaleza, Ceará, Brasil
+        <span class="sep"> | </span>
+        <a href="tel:+5585991689582">+55 (85) 99168-9582</a>
+        <span class="sep"> | </span>
+        <a href="mailto:alanzayon72@gmail.com">alanzayon72@gmail.com</a>
+        <span class="sep"> | </span>
+        <a href="https://www.linkedin.com/in/alanzayon/">LinkedIn</a>
+        <span class="sep"> | </span>
+        <a href="https://github.com/AlanZayon">GitHub</a>
+        <span class="sep"> | </span>
+        <a href="https://alanzayon.github.io/Portifolio/">Portfólio</a>
+      </p>
+    </header>
+
+    <section>
+      <h2>Resumo Profissional</h2>
+      <p class="summary">
+        Desenvolvedor Full-Stack com foco em C#, .NET 8/9 e ASP.NET Core, construindo APIs REST e interfaces em Angular e Vue para sistemas corporativos de eventos, controle de acesso e produtos fiscais.
+        Atuo de ponta a ponta: regras de negócio, isolamento de dados por cliente, processamento assíncrono (filas e background jobs) e integrações entre sistemas — incluindo webhooks, conciliação DAS/DARF/OFX e fluxos ligados a catracas e totens.
+        Busco vagas de Desenvolvedor Full-Stack .NET / C# em que eu entregue API, tela de operação e confiabilidade do fluxo ponta a ponta.
+      </p>
+    </section>
+
+    <section class="skills">
+      <h2>Habilidades Técnicas | Skills</h2>
+      <p><strong>Backend:</strong> C#, .NET 9, .NET 8, ASP.NET Core, APIs REST</p>
+      <p><strong>Frontend:</strong> Angular 19, Vue 3, TypeScript, HTML, CSS; React.js (quando o produto exige)</p>
+      <p><strong>Dados:</strong> PostgreSQL, SQL Server, MongoDB, Redis</p>
+      <p><strong>Mensageria e processamento:</strong> Azure Service Bus (filas e tópicos), Hangfire, background jobs; BullMQ (Node.js)</p>
+      <p><strong>Cloud e DevOps:</strong> Docker, GitHub Actions, CI/CD, AWS S3, Git</p>
+      <p><strong>Engenharia:</strong> multi-tenancy, RBAC, idempotência, webhooks, conciliação fiscal (DAS/DARF/OFX)</p>
+      <p><strong>Também utilizei:</strong> Node.js, NestJS</p>
+    </section>
+
+    <section>
+      <h2>Experiência Profissional | Work Experience</h2>
+
+      <article class="job-block">
+        <div class="job-title">
+          <h3>Desenvolvedor Full-Stack <em>— ASC Solutions</em></h3>
+        </div>
+        <p class="job-meta">
+          Rio de Janeiro, RJ
+          <span class="sep"> | </span>
+          <span class="dates"><time datetime="2026-02">Fevereiro 2026</time> – Atual</span>
+        </p>
+        <ul class="bullets">
+          <li>Desenvolvi a plataforma de eventos com biometria facial em Angular 19, C#, .NET 9 e SQL Server, incluindo API de parceiros para consulta de face em produção com autenticação por token, whitelist de IP e limite de chamadas — cada cliente acessa somente os próprios dados.</li>
+          <li>Movi importações de até 30 mil registros do navegador para background jobs, com validação, relatório de falhas e retomada de lote, liberando a interface de operação do processamento pesado.</li>
+          <li>Implementei publicação no Azure Service Bus (fila ou tópico, conforme o evento) para desacoplar o fluxo de eventos da atualização das bases locais de acesso usadas nas catracas, inclusive após a compra do ingresso.</li>
+          <li>No clube de sócios, implementei idempotência nos webhooks de pagamento (pago, cancelado e estorno) e job de cartão recorrente para parcelas vencidas.</li>
+        </ul>
+      </article>
+
+      <article class="job-block">
+        <div class="job-title">
+          <h3>Desenvolvedor Full-Stack (Freelancer) <em>— Mitfokus Contabilidade Médica</em></h3>
+        </div>
+        <p class="job-meta">
+          Campinas, SP <span class="sep"> · </span> Remoto
+          <span class="sep"> | </span>
+          <span class="dates"><time datetime="2026-02">Fevereiro 2026</time> – Atual</span>
+        </p>
+        <ul class="bullets">
+          <li>Evoluí o produto fiscal em produção (Vue 3, .NET 8, C# e PostgreSQL), substituindo mapeamento único por cliente por perfis de plano de contas reutilizáveis.</li>
+          <li>Passei o processamento de PDF/OFX para Hangfire, com arquivos no AWS S3 e cache Redis — lotes de até 10 arquivos, uploads de até 100 MB e OFX com dezenas de milhares de transações.</li>
+          <li>Implementei classificação OFX por grupos, lista virtualizada na interface e testes de unidade e integração; automatizei histórico de Simples Nacional, DCTFWEB (INSS/IRRF) e pró-labore anual, com regras por CNPJ e banco.</li>
+        </ul>
+      </article>
+
+      <article class="job-block">
+        <div class="job-title">
+          <h3>Desenvolvedor Full-Stack (Freelancer) <em>— Agilize Contabilidade</em></h3>
+        </div>
+        <p class="job-meta">
+          Salvador, BA <span class="sep"> · </span> Remoto
+          <span class="sep"> | </span>
+          <span class="dates"><time datetime="2025-05">Maio 2025</time> – <time datetime="2025-10">Outubro 2025</time></span>
+        </p>
+        <ul class="bullets">
+          <li>Desenvolvi de ponta a ponta a conciliação DAS/DARF e OFX em Vue, .NET 8, C# e PostgreSQL, gerando CSV no padrão Domínio com códigos de débito e crédito configuráveis.</li>
+          <li>Tratei OFX SGML com mais de 8.000 transações, com pendência e reaproveitamento de termos — redução de cerca de 10 horas/mês de lançamento manual, segundo medição do cliente.</li>
+        </ul>
+      </article>
+
+      <article class="job-block">
+        <div class="job-title">
+          <h3>Desenvolvedor Full-Stack <em>— Prefeitura Municipal de Maranguape</em></h3>
+        </div>
+        <p class="job-meta">
+          Maranguape, CE
+          <span class="sep"> | </span>
+          <span class="dates"><time datetime="2024-11">Novembro 2024</time> – <time datetime="2025-11">Novembro 2025</time></span>
+        </p>
+        <ul class="bullets">
+          <li>Desenvolvi o sistema de lotação de servidores em React, Node.js, TypeScript e MongoDB para até 10 mil pessoas — setores, indicações, cargos comissionados e dashboard para chefes de gabinete e equipe.</li>
+          <li>Otimizei consultas com agregações no MongoDB, reduzindo tempo de resposta de APIs de aproximadamente 1,6 s para 50 ms; relatórios com branding e mídia no AWS S3. Em evolução posterior, a API passou a NestJS multi-tenant, com Redis, RBAC e BullMQ.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Projetos Pessoais | Personal Projects</h2>
+
+      <article class="project-block">
+        <h3>GameScore — <a href="https://github.com/AlanZayon/GameScore-Project">github.com/AlanZayon/GameScore-Project</a></h3>
+        <p class="stack">Next.js · NestJS · TypeScript · PostgreSQL · Redis · BullMQ · Docker</p>
+        <ul class="bullets">
+          <li>Plataforma web para descobrir e avaliar jogos pela recomendação de jogadores. Monorepo Next.js + NestJS com ranking por Wilson score (considera o volume de avaliações), busca full-text no PostgreSQL, jobs BullMQ, autenticação JWT com refresh e moderação com detecção de review bomb.</li>
+        </ul>
+      </article>
+
+      <article class="project-block">
+        <h3>Gerador Inteligente de Campanhas RPG — <a href="https://github.com/AlanZayon/python-gerador-inteligente-RPG">github.com/AlanZayon/python-gerador-inteligente-RPG</a></h3>
+        <p class="stack">Python · Flask · Redis · PostgreSQL · AWS S3 · FAISS (RAG) · JWT</p>
+        <ul class="bullets">
+          <li>Ferramenta para mestres: transforma PDF de regras em campanha jogável (visão geral, sessões e apêndice). API assíncrona com fila Redis, worker (pipeline RAG/FAISS → plano → escrita → revisão), idempotência de jobs e publicação do Markdown no S3.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="edu">
+      <h2>Formação Acadêmica | Education</h2>
+      <p><strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong> — Estácio, conclusão prevista <time datetime="2027-07">Julho 2027</time></p>
+    </section>
+    <section class="lang">
+      <h2>Idiomas | Languages</h2>
+      <p>Português — Nativo <span class="sep"> | </span> Inglês — Leitura e escrita técnica (docs, PRs e APIs)</p>
+    </section>
+  </main>
+</body>
+</html>

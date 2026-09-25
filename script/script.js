@@ -67,7 +67,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.typed-text')) {
         const typed = new Typed('.typed-text', {
-            strings: ['Fullstack Developer', 'Web Designer', 'Problem Solver', 'Tech Enthusiast'],
+            strings: ['Full-Stack .NET Developer', 'C# / ASP.NET Core', 'Angular & Vue', 'APIs & Async Jobs'],
             typeSpeed: 50,
             backSpeed: 30,
             loop: true
