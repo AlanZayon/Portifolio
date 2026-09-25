@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -203,6 +203,37 @@
             color: rgba(255, 255, 255, 0.7);
             margin-top: 5px;
         }
+        /* Experience timeline */
+        .experience-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .experience-item {
+            background: #fff;
+            border-left: 4px solid #6c5ce7;
+            border-radius: 0 12px 12px 0;
+            padding: 20px 24px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 18px rgba(45, 52, 54, 0.06);
+        }
+        .experience-item h3 {
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+        .experience-meta {
+            color: #636e72;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .experience-meta .dates {
+            color: #6c5ce7;
+            font-weight: 600;
+        }
+        .experience-item p {
+            margin: 0;
+            color: #2d3436;
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 
@@ -228,6 +259,9 @@
                         <a class="nav-link" href="#aboutMe" data-translate="nav_about">About</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#experience" data-translate="nav_experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#projects" data-translate="nav_projects">Projects</a>
                     </li>
                     <li class="nav-item">
@@ -238,13 +272,13 @@
                     <li class="nav-item">
                         <div class="language-selector">
                             <button class="language-btn" id="languageBtn">
-                                <i class="fas fa-globe"></i> <span id="currentLanguage">PT</span>
+                                <i class="fas fa-globe"></i> <span id="currentLanguage">EN</span>
                             </button>
                             <div class="language-options" id="languageOptions">
-                                <div class="language-option active" data-lang="pt">
+                                <div class="language-option" data-lang="pt">
                                     <i class="fas fa-check"></i> Português
                                 </div>
-                                <div class="language-option" data-lang="en">
+                                <div class="language-option active" data-lang="en">
                                     <i class="fas fa-check"></i> English
                                 </div>
                             </div>
@@ -522,13 +556,60 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="experience_title">Experience</h2>
+                <div class="section-divider"></div>
+                <p data-translate="experience_description">Recent roles — short summary. Full detail in the downloadable CV.</p>
+            </div>
+
+            <article class="experience-item">
+                <h3 data-translate="exp1_title">Full-Stack Developer — ASC Solutions</h3>
+                <p class="experience-meta">
+                    <span data-translate="exp1_place">Rio de Janeiro, Brazil</span>
+                    · <span class="dates" data-translate="exp1_dates">Feb 2026 – Present</span>
+                </p>
+                <p data-translate="exp1_desc">Facial-biometrics event platform (Angular 19, .NET 9, SQL Server): partner face API, 30k-row background imports, Azure Service Bus, idempotent payment webhooks.</p>
+            </article>
+
+            <article class="experience-item">
+                <h3 data-translate="exp2_title">Full-Stack Developer (Freelance) — Mitfokus Medical Accounting</h3>
+                <p class="experience-meta">
+                    <span data-translate="exp2_place">Campinas, Brazil · Remote</span>
+                    · <span class="dates" data-translate="exp2_dates">Feb 2026 – Present</span>
+                </p>
+                <p data-translate="exp2_desc">Fiscal product in production (Vue 3, .NET 8, PostgreSQL): Hangfire PDF/OFX pipelines, Redis/S3, chart-of-accounts profiles, tax history automation.</p>
+            </article>
+
+            <article class="experience-item">
+                <h3 data-translate="exp3_title">Full-Stack Developer (Freelance) — Agilize Accounting</h3>
+                <p class="experience-meta">
+                    <span data-translate="exp3_place">Salvador, Brazil · Remote</span>
+                    · <span class="dates" data-translate="exp3_dates">May 2025 – Oct 2025</span>
+                </p>
+                <p data-translate="exp3_desc">End-to-end DAS/DARF + OFX reconciliation (Vue, .NET 8, PostgreSQL); ~10 h/month less manual posting.</p>
+            </article>
+
+            <article class="experience-item">
+                <h3 data-translate="exp4_title">Full-Stack Developer — Municipality of Maranguape</h3>
+                <p class="experience-meta">
+                    <span data-translate="exp4_place">Maranguape, Brazil</span>
+                    · <span class="dates" data-translate="exp4_dates">Nov 2024 – Nov 2025</span>
+                </p>
+                <p data-translate="exp4_desc">Staffing &amp; org-chart system for up to 10,000 public servants (React, Node.js, MongoDB); APIs ~32× faster (1.6s → 50ms).</p>
+            </article>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <div class="container">
             <div class="section-header">
                 <h2 data-translate="projects_title">My Projects</h2>
                 <div class="section-divider"></div>
-                <p data-translate="projects_description">Featured work aligned with my current resume — GameScore, the RPG generator, and fiscal reconciliation on .NET.</p>
+                <p data-translate="projects_description">Featured projects: GameScore, Smart RPG generator, fiscal reconciliation, and the municipal staffing platform.</p>
             </div>
 
             <div class="row projects-container">
@@ -536,7 +617,7 @@
                 <div class="col-lg-4 mb-4">
                     <div class="project-card h-100">
                         <div class="project-image">
-                            <img src="./images/Captura de tela 2025-08-26 121844.png"
+                            <img src="./images/5e3bbd1b-90be-4ad0-850b-dc754a994e0f.png"
                                 alt="GameScore" class="img-fluid">
                             <div class="api-badges mt-2">
                                 <span class="api-badge">ASP.NET Core 10</span>
@@ -690,6 +771,64 @@
                                         Demo</span>
                                 </a>
                                 <a href="https://github.com/AlanZayon/ApiPdfCsv" target="_blank"
+                                    class="project-link-btn code">
+                                    <i class="fab fa-github"></i> <span data-translate="projects_code">View Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 4: Employee / Org chart management -->
+                <div class="col-lg-4 mb-4">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="./images/Captura de tela 2025-08-26 121844.png" alt="Employee Management System"
+                                class="img-fluid">
+                            <div class="api-badges mt-2">
+                                <span class="api-badge">Node.js</span>
+                                <span class="api-badge">TypeScript</span>
+                                <span class="api-badge">MongoDB</span>
+                                <span class="api-badge">React</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 data-translate="project4_title">Employee &amp; Org Chart Management</h3>
+                            <p data-translate="project4_description">Full-stack staffing system for up to 10,000 public servants — department hierarchy, nominations, appointed roles, and dashboards.</p>
+
+                            <div class="backend-features">
+                                <h6 data-translate="projects_features">Key Features:</h6>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project4_feature1">Organizational chart visualization</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project4_feature2">Role-based access control</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project4_feature3">MongoDB aggregations (~32× faster APIs)</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project4_feature4">AWS S3 uploads and branded PDF reports</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project4_feature5">Later NestJS multi-tenant evolution</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span
+                                            data-translate="project4_feature6">React operations UI</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="project-tech mt-3">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">AWS S3</span>
+                            </div>
+
+                            <div class="project-links-container">
+                                <a href="https://interface-sistema-maranguape.vercel.app/" target="_blank"
+                                    class="project-link-btn demo">
+                                    <i class="fas fa-external-link-alt"></i> <span data-translate="projects_live">Live
+                                        Demo</span>
+                                </a>
+                                <a href="https://github.com/AlanZayon/api-maranguape" target="_blank"
                                     class="project-link-btn code">
                                     <i class="fab fa-github"></i> <span data-translate="projects_code">View Code</span>
                                 </a>
@@ -863,6 +1002,7 @@
                 // Navegação
                 'nav_skills': 'Habilidades',
                 'nav_about': 'Sobre',
+                'nav_experience': 'Experiência',
                 'nav_projects': 'Projetos',
                 'nav_contact': 'Contato',
 
@@ -899,11 +1039,31 @@
                 'about_hire': 'Contrate-me',
                 'about_cv': 'Baixar CV',
                 'about_experience': 'Anos de Experiência',
-                'cv_note': 'CV Full-Stack atual (HTML para imprimir em PDF)',
+                'cv_note': 'CV Full-Stack atual em PDF (PT)',
+
+                // Experience
+                'experience_title': 'Experiência',
+                'experience_description': 'Cargos recentes — resumo. Detalhe completo no CV para download.',
+                'exp1_title': 'Desenvolvedor Full-Stack — ASC Solutions',
+                'exp1_place': 'Rio de Janeiro, Brasil',
+                'exp1_dates': 'Fev 2026 – Atual',
+                'exp1_desc': 'Plataforma de eventos com biometria facial (Angular 19, .NET 9, SQL Server): API de parceiros, importações de 30 mil registros, Azure Service Bus e webhooks de pagamento idempotentes.',
+                'exp2_title': 'Desenvolvedor Full-Stack (Freelancer) — Mitfokus Contabilidade Médica',
+                'exp2_place': 'Campinas, Brasil · Remoto',
+                'exp2_dates': 'Fev 2026 – Atual',
+                'exp2_desc': 'Produto fiscal em produção (Vue 3, .NET 8, PostgreSQL): pipelines Hangfire PDF/OFX, Redis/S3, perfis de plano de contas e histórico fiscal.',
+                'exp3_title': 'Desenvolvedor Full-Stack (Freelancer) — Agilize Contabilidade',
+                'exp3_place': 'Salvador, Brasil · Remoto',
+                'exp3_dates': 'Mai 2025 – Out 2025',
+                'exp3_desc': 'Conciliação DAS/DARF + OFX de ponta a ponta (Vue, .NET 8, PostgreSQL); ~10 h/mês a menos de lançamento manual.',
+                'exp4_title': 'Desenvolvedor Full-Stack — Prefeitura de Maranguape',
+                'exp4_place': 'Maranguape, Brasil',
+                'exp4_dates': 'Nov 2024 – Nov 2025',
+                'exp4_desc': 'Sistema de lotação e organograma para até 10 mil servidores (React, Node.js, MongoDB); APIs ~32× mais rápidas (1,6s → 50ms).',
 
                 // Projects Section
                 'projects_title': 'Meus Projetos',
-                'projects_description': 'Trabalhos em destaque alinhados ao currículo — GameScore, gerador de RPG e conciliação fiscal em .NET.',
+                'projects_description': 'Projetos em destaque: GameScore, gerador de RPG, conciliação fiscal e plataforma municipal de lotação.',
                 'projects_features': 'Principais Funcionalidades:',
                 'projects_live': 'Demo Ao Vivo',
                 'projects_code': 'Ver Código',
@@ -937,6 +1097,15 @@
                 'project3_feature5': 'JWT e logs estruturados',
                 'project3_feature6': 'Cliente Vue para usuários não-dev',
 
+                'project4_title': 'Lotação e Organograma',
+                'project4_description': 'Sistema full-stack de lotação para até 10 mil servidores públicos — hierarquia de setores, indicações, cargos e dashboards.',
+                'project4_feature1': 'Visualização de organograma',
+                'project4_feature2': 'Controle de acesso por perfil (RBAC)',
+                'project4_feature3': 'Agregações MongoDB (APIs ~32× mais rápidas)',
+                'project4_feature4': 'Uploads AWS S3 e relatórios PDF',
+                'project4_feature5': 'Evolução posterior multi-tenant NestJS',
+                'project4_feature6': 'Interface React de operação',
+
                 // Contact Section
                 'contact_title': 'Entre em Contato',
                 'contact_description': 'Procurando um Desenvolvedor Full-Stack .NET para seu time? Vamos falar sobre APIs, UIs e fluxos confiáveis.',
@@ -967,6 +1136,7 @@
                 // Navegação
                 'nav_skills': 'Skills',
                 'nav_about': 'About',
+                'nav_experience': 'Experience',
                 'nav_projects': 'Projects',
                 'nav_contact': 'Contact',
 
@@ -1003,11 +1173,31 @@
                 'about_hire': 'Hire Me',
                 'about_cv': 'Download CV',
                 'about_experience': 'Years Experience',
-                'cv_note': 'Current Full-Stack CV (HTML — print to PDF)',
+                'cv_note': 'Current Full-Stack CV as PDF (EN)',
+
+                // Experience
+                'experience_title': 'Experience',
+                'experience_description': 'Recent roles — short summary. Full detail in the downloadable CV.',
+                'exp1_title': 'Full-Stack Developer — ASC Solutions',
+                'exp1_place': 'Rio de Janeiro, Brazil',
+                'exp1_dates': 'Feb 2026 – Present',
+                'exp1_desc': 'Facial-biometrics event platform (Angular 19, .NET 9, SQL Server): partner face API, 30k-row background imports, Azure Service Bus, idempotent payment webhooks.',
+                'exp2_title': 'Full-Stack Developer (Freelance) — Mitfokus Medical Accounting',
+                'exp2_place': 'Campinas, Brazil · Remote',
+                'exp2_dates': 'Feb 2026 – Present',
+                'exp2_desc': 'Fiscal product in production (Vue 3, .NET 8, PostgreSQL): Hangfire PDF/OFX pipelines, Redis/S3, chart-of-accounts profiles, tax history automation.',
+                'exp3_title': 'Full-Stack Developer (Freelance) — Agilize Accounting',
+                'exp3_place': 'Salvador, Brazil · Remote',
+                'exp3_dates': 'May 2025 – Oct 2025',
+                'exp3_desc': 'End-to-end DAS/DARF + OFX reconciliation (Vue, .NET 8, PostgreSQL); ~10 h/month less manual posting.',
+                'exp4_title': 'Full-Stack Developer — Municipality of Maranguape',
+                'exp4_place': 'Maranguape, Brazil',
+                'exp4_dates': 'Nov 2024 – Nov 2025',
+                'exp4_desc': 'Staffing & org-chart system for up to 10,000 public servants (React, Node.js, MongoDB); APIs ~32× faster (1.6s → 50ms).',
 
                 // Projects Section
                 'projects_title': 'My Projects',
-                'projects_description': 'Featured work aligned with my current resume — GameScore, the RPG generator, and fiscal reconciliation on .NET.',
+                'projects_description': 'Featured projects: GameScore, Smart RPG generator, fiscal reconciliation, and the municipal staffing platform.',
                 'projects_features': 'Key Features:',
                 'projects_live': 'Live Demo',
                 'projects_code': 'View Code',
@@ -1040,6 +1230,15 @@
                 'project3_feature5': 'JWT auth and structured logging',
                 'project3_feature6': 'Vue client for non-dev users',
 
+                'project4_title': 'Employee & Org Chart Management',
+                'project4_description': 'Full-stack staffing system for up to 10,000 public servants — department hierarchy, nominations, appointed roles, and dashboards.',
+                'project4_feature1': 'Organizational chart visualization',
+                'project4_feature2': 'Role-based access control',
+                'project4_feature3': 'MongoDB aggregations (~32× faster APIs)',
+                'project4_feature4': 'AWS S3 uploads and branded PDF reports',
+                'project4_feature5': 'Later NestJS multi-tenant evolution',
+                'project4_feature6': 'React operations UI',
+
                 // Contact Section
                 'contact_title': 'Get In Touch',
                 'contact_description': 'Looking for a Full-Stack .NET Developer for your team? Let\'s talk about APIs, UIs, and reliable flows.',
@@ -1069,7 +1268,7 @@
         };
 
         // Variável para controlar o idioma atual
-        let currentLanguage = 'pt';
+        let currentLanguage = 'en';
 
         // Função para aplicar traduções
         function applyTranslation(lang) {
@@ -1110,22 +1309,22 @@
             document.documentElement.lang = lang;
         }
 
-        // Função para fazer download do currículo correto (HTML atual — imprimir como PDF no navegador)
+        // Download CV PDF (PT or EN based on language)
         function downloadCV() {
             let cvFile;
             let cvFileName;
             
             if (currentLanguage === 'pt') {
-                cvFile = 'Alan Zayon - Currículo Full-Stack.NET.html';
-                cvFileName = 'Alan_Zayon_Curriculo_FullStack.html';
+                cvFile = 'Alan Zayon - Currículo.pdf';
+                cvFileName = 'Alan_Zayon_Curriculo.pdf';
             } else {
-                cvFile = 'Alan Zayon - Resume Full-Stack.NET EN.html';
-                cvFileName = 'Alan_Zayon_Resume_FullStack.html';
+                cvFile = 'Alan Zayon - Resume.pdf';
+                cvFileName = 'Alan_Zayon_Resume.pdf';
             }
             
             // Criar um link temporário para o download
             const link = document.createElement('a');
-            link.href = cvFile;
+            link.href = encodeURI(cvFile);
             link.download = cvFileName;
             document.body.appendChild(link);
             link.click();
@@ -1192,8 +1391,8 @@
                 cvDownloadBtn.addEventListener('click', downloadCV);
             }
 
-            // Carregar o idioma salvo ou usar o padrão (português)
-            const savedLanguage = localStorage.getItem('preferredLanguage') || 'pt';
+            // Default language: English (first visit). Respect saved preference if present.
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
             applyTranslation(savedLanguage);
 
             // Configurar envio do formulário de contato
@@ -1206,7 +1405,7 @@
                     // Por exemplo, usando EmailJS, Formspree ou seu próprio backend
 
                     // Simulação de envio bem-sucedido
-                    const currentLang = localStorage.getItem('preferredLanguage') || 'pt';
+                    const currentLang = localStorage.getItem('preferredLanguage') || 'en';
                     const successMessage = currentLang === 'pt'
                         ? 'Mensagem enviada com sucesso! Entrarei em contato em breve.'
                         : 'Message sent successfully! I will contact you soon.';
