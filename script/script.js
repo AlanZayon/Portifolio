@@ -1,29 +1,34 @@
 // Smooth scrolling for navigation links + active state
-document.querySelectorAll('.navbar-nav .nav-link[href^="#"]').forEach(anchor => {
+document.querySelectorAll('.navbar-nav .nav-link[href^="#"], .js-section-link').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
         const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+
         const targetElement = document.querySelector(targetId);
+        if (!targetElement) return;
 
-        if (targetElement) {
+        if (this.classList.contains('nav-link')) {
             setActiveNavLink(targetId);
+        } else if (targetId.startsWith('#project-')) {
+            setActiveNavLink('#projects');
+        }
 
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
+        window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+        });
 
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                const toggler = document.querySelector('.navbar-toggler');
-                if (toggler && typeof bootstrap !== 'undefined') {
-                    const collapse = bootstrap.Collapse.getInstance(navbarCollapse)
-                        || new bootstrap.Collapse(navbarCollapse, { toggle: false });
-                    collapse.hide();
-                } else {
-                    navbarCollapse.classList.remove('show');
-                }
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+            const toggler = document.querySelector('.navbar-toggler');
+            if (toggler && typeof bootstrap !== 'undefined') {
+                const collapse = bootstrap.Collapse.getInstance(navbarCollapse)
+                    || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                collapse.hide();
+            } else {
+                navbarCollapse.classList.remove('show');
             }
         }
     });

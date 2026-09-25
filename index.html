@@ -234,6 +234,28 @@
             color: #2d3436;
             font-size: 0.95rem;
         }
+        .experience-project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+        .experience-project-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #6c5ce7;
+            border: 1px solid #6c5ce7;
+            border-radius: 999px;
+            padding: 6px 14px;
+            transition: all 0.2s ease;
+        }
+        .experience-project-links a:hover {
+            background: rgba(108, 92, 231, 0.1);
+            color: #5b4bd4;
+        }
     </style>
 </head>
 
@@ -572,6 +594,7 @@
                     · <span class="dates" data-translate="exp1_dates">Feb 2026 – Present</span>
                 </p>
                 <p data-translate="exp1_desc">Facial-biometrics event platform (Angular 19, .NET 9, SQL Server): partner face API, 30k-row background imports, Azure Service Bus, idempotent payment webhooks.</p>
+                <p class="experience-meta mt-2 mb-0" data-translate="exp1_note"><em>Proprietary product — no public demo.</em></p>
             </article>
 
             <article class="experience-item">
@@ -581,6 +604,12 @@
                     · <span class="dates" data-translate="exp2_dates">Feb 2026 – Present</span>
                 </p>
                 <p data-translate="exp2_desc">Fiscal product in production (Vue 3, .NET 8, PostgreSQL): Hangfire PDF/OFX pipelines, Redis/S3, chart-of-accounts profiles, tax history automation.</p>
+                <div class="experience-project-links">
+                    <a href="#project-apipdfcsv" class="js-section-link">
+                        <i class="fas fa-link"></i>
+                        <span data-translate="exp2_project">Related project: ApiPdfCsv</span>
+                    </a>
+                </div>
             </article>
 
             <article class="experience-item">
@@ -590,6 +619,12 @@
                     · <span class="dates" data-translate="exp3_dates">May 2025 – Oct 2025</span>
                 </p>
                 <p data-translate="exp3_desc">End-to-end DAS/DARF + OFX reconciliation (Vue, .NET 8, PostgreSQL); ~10 h/month less manual posting.</p>
+                <div class="experience-project-links">
+                    <a href="#project-apipdfcsv" class="js-section-link">
+                        <i class="fas fa-link"></i>
+                        <span data-translate="exp3_project">Related project: ApiPdfCsv</span>
+                    </a>
+                </div>
             </article>
 
             <article class="experience-item">
@@ -599,6 +634,12 @@
                     · <span class="dates" data-translate="exp4_dates">Nov 2024 – Nov 2025</span>
                 </p>
                 <p data-translate="exp4_desc">Staffing &amp; org-chart system for up to 10,000 public servants (React, Node.js, MongoDB); APIs ~32× faster (1.6s → 50ms).</p>
+                <div class="experience-project-links">
+                    <a href="#project-maranguape" class="js-section-link">
+                        <i class="fas fa-link"></i>
+                        <span data-translate="exp4_project">Related project: Employee &amp; Org Chart</span>
+                    </a>
+                </div>
             </article>
         </div>
     </section>
@@ -614,7 +655,7 @@
 
             <div class="row projects-container">
                 <!-- Projeto 1: GameScore -->
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4" id="project-gamescore">
                     <div class="project-card h-100">
                         <div class="project-image">
                             <img src="./images/gamescore.png"
@@ -668,7 +709,7 @@
                 </div>
 
                 <!-- Projeto 2: Smart RPG Campaign Generator -->
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4" id="project-rpg">
                     <div class="project-card h-100">
                         <div class="project-image">
                             <img src="./images/smart-rpg.jpg" alt="Smart RPG Campaign Generator"
@@ -727,7 +768,7 @@
                 </div>
 
                 <!-- Projeto 3: ApiPdfCsv -->
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4" id="project-apipdfcsv">
                     <div class="project-card h-100">
                         <div class="project-image">
                             <img src="./images/Captura de tela 2025-08-27 164834.png" alt="ApiPdfCsv" class="img-fluid">
@@ -784,7 +825,7 @@
                 </div>
 
                 <!-- Projeto 4: Employee / Org chart management -->
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4" id="project-maranguape">
                     <div class="project-card h-100">
                         <div class="project-image">
                             <img src="./images/maranguape-dashboard.png" alt="Employee & Org Chart Management"
@@ -1052,18 +1093,22 @@
                 'exp1_place': 'Rio de Janeiro, Brasil',
                 'exp1_dates': 'Fev 2026 – Atual',
                 'exp1_desc': 'Plataforma de eventos com biometria facial (Angular 19, .NET 9, SQL Server): API de parceiros, importações de 30 mil registros, Azure Service Bus e webhooks de pagamento idempotentes.',
+                'exp1_note': 'Produto proprietário — sem demo pública.',
                 'exp2_title': 'Desenvolvedor Full-Stack (Freelancer) — Mitfokus Contabilidade Médica',
                 'exp2_place': 'Campinas, Brasil · Remoto',
                 'exp2_dates': 'Fev 2026 – Atual',
                 'exp2_desc': 'Produto fiscal em produção (Vue 3, .NET 8, PostgreSQL): pipelines Hangfire PDF/OFX, Redis/S3, perfis de plano de contas e histórico fiscal.',
+                'exp2_project': 'Projeto relacionado: ApiPdfCsv',
                 'exp3_title': 'Desenvolvedor Full-Stack (Freelancer) — Agilize Contabilidade',
                 'exp3_place': 'Salvador, Brasil · Remoto',
                 'exp3_dates': 'Mai 2025 – Out 2025',
                 'exp3_desc': 'Conciliação DAS/DARF + OFX de ponta a ponta (Vue, .NET 8, PostgreSQL); ~10 h/mês a menos de lançamento manual.',
+                'exp3_project': 'Projeto relacionado: ApiPdfCsv',
                 'exp4_title': 'Desenvolvedor Full-Stack — Prefeitura de Maranguape',
                 'exp4_place': 'Maranguape, Brasil',
                 'exp4_dates': 'Nov 2024 – Nov 2025',
                 'exp4_desc': 'Sistema de lotação e organograma para até 10 mil servidores (React, Node.js, MongoDB); APIs ~32× mais rápidas (1,6s → 50ms).',
+                'exp4_project': 'Projeto relacionado: Lotação e Organograma',
 
                 // Projects Section
                 'projects_title': 'Meus Projetos',
@@ -1186,18 +1231,22 @@
                 'exp1_place': 'Rio de Janeiro, Brazil',
                 'exp1_dates': 'Feb 2026 – Present',
                 'exp1_desc': 'Facial-biometrics event platform (Angular 19, .NET 9, SQL Server): partner face API, 30k-row background imports, Azure Service Bus, idempotent payment webhooks.',
+                'exp1_note': 'Proprietary product — no public demo.',
                 'exp2_title': 'Full-Stack Developer (Freelance) — Mitfokus Medical Accounting',
                 'exp2_place': 'Campinas, Brazil · Remote',
                 'exp2_dates': 'Feb 2026 – Present',
                 'exp2_desc': 'Fiscal product in production (Vue 3, .NET 8, PostgreSQL): Hangfire PDF/OFX pipelines, Redis/S3, chart-of-accounts profiles, tax history automation.',
+                'exp2_project': 'Related project: ApiPdfCsv',
                 'exp3_title': 'Full-Stack Developer (Freelance) — Agilize Accounting',
                 'exp3_place': 'Salvador, Brazil · Remote',
                 'exp3_dates': 'May 2025 – Oct 2025',
                 'exp3_desc': 'End-to-end DAS/DARF + OFX reconciliation (Vue, .NET 8, PostgreSQL); ~10 h/month less manual posting.',
+                'exp3_project': 'Related project: ApiPdfCsv',
                 'exp4_title': 'Full-Stack Developer — Municipality of Maranguape',
                 'exp4_place': 'Maranguape, Brazil',
                 'exp4_dates': 'Nov 2024 – Nov 2025',
                 'exp4_desc': 'Staffing & org-chart system for up to 10,000 public servants (React, Node.js, MongoDB); APIs ~32× faster (1.6s → 50ms).',
+                'exp4_project': 'Related project: Employee & Org Chart',
 
                 // Projects Section
                 'projects_title': 'My Projects',
