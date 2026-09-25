@@ -1,39 +1,84 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// Smooth scrolling for navigation links + active state
+document.querySelectorAll('.navbar-nav .nav-link[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
+            setActiveNavLink(targetId);
+
             window.scrollTo({
                 top: targetElement.offsetTop - 80,
                 behavior: 'smooth'
             });
-            
-            // Close mobile menu if open
+
             const navbarCollapse = document.querySelector('.navbar-collapse');
-            if (navbarCollapse.classList.contains('show')) {
-                navbarCollapse.classList.remove('show');
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                const toggler = document.querySelector('.navbar-toggler');
+                if (toggler && typeof bootstrap !== 'undefined') {
+                    const collapse = bootstrap.Collapse.getInstance(navbarCollapse)
+                        || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                    collapse.hide();
+                } else {
+                    navbarCollapse.classList.remove('show');
+                }
             }
         }
     });
 });
 
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+function setActiveNavLink(hash) {
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === hash);
+    });
+}
+
+function updateActiveNavOnScroll() {
+    const sections = ['skills', 'aboutMe', 'experience', 'projects', 'contact']
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+
+    const scrollPos = window.scrollY + 120;
+    let currentId = null;
+
+    for (const section of sections) {
+        if (scrollPos >= section.offsetTop) {
+            currentId = section.id;
+        }
     }
+
+    // Near top / hero: no section active
+    if (window.scrollY < 80) {
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        return;
+    }
+
+    if (currentId) {
+        setActiveNavLink('#' + currentId);
+    }
+}
+
+// Navbar scroll effect
+window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+    updateActiveNavOnScroll();
 });
 
 // Back to top button
 const backToTopButton = document.getElementById('backToTop');
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
+    if (!backToTopButton) return;
     if (window.scrollY > 300) {
         backToTopButton.classList.add('active');
     } else {
@@ -42,64 +87,59 @@ window.addEventListener('scroll', function() {
 });
 
 // Form submission
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    if (!name || !email || !subject || !message) {
-        alert('Please fill in all fields.');
-        return;
-    }
-    
-    // Here you would typically send the form data to a server
-    // For this example, we'll just show a success message
-    alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
-    
-    // Reset form
-    this.reset();
-});
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-// Typed.js animation for hero section (optional)
-document.addEventListener('DOMContentLoaded', function() {
-    if (document.querySelector('.typed-text')) {
-        const typed = new Typed('.typed-text', {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        if (!name || !email || !subject || !message) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+        this.reset();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.querySelector('.typed-text') && typeof Typed !== 'undefined') {
+        new Typed('.typed-text', {
             strings: ['Full-Stack .NET Developer', 'C# / ASP.NET Core', 'Angular & Vue', 'APIs & Async Jobs'],
             typeSpeed: 50,
             backSpeed: 30,
             loop: true
         });
     }
-    
-    // Animate elements when they come into view
-    const animateOnScroll = function() {
+
+    const animateOnScroll = function () {
         const elements = document.querySelectorAll('.animate-fadeInUp');
-        
+
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
-            
+
             if (elementPosition < windowHeight - 100) {
                 element.style.opacity = '1';
                 element.style.transform = 'translateY(0)';
             }
         });
     };
-    
-    // Run once on page load
+
     animateOnScroll();
-    
-    // Run on scroll
     window.addEventListener('scroll', animateOnScroll);
+    updateActiveNavOnScroll();
 });
 
-// Helper function to scroll to section
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
+        setActiveNavLink('#' + sectionId);
         window.scrollTo({
             top: section.offsetTop - 80,
             behavior: 'smooth'
