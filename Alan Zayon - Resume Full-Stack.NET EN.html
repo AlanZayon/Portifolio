@@ -165,7 +165,7 @@
         </p>
         <ul class="bullets">
           <li>Built the public-servant staffing system in React, Node.js, TypeScript, and MongoDB for up to 10,000 people — departments, nominations, appointed positions, and dashboards for chiefs of staff and teams.</li>
-          <li>Optimized queries with MongoDB aggregations, cutting API response time from ~1.6 s to 50 ms; branded reports and media on AWS S3. Later evolution moved the API to multi-tenant NestJS with Redis, RBAC, and BullMQ.</li>
+          <li>Optimized queries with MongoDB aggregations, cutting API response time from ~1.6 s to 50 ms; branded reports and media on AWS S3. Later evolution (after the municipal role) moved the public API to multi-tenant ASP.NET Core 10 with Redis, Hangfire, and per-tenant isolation.</li>
         </ul>
       </article>
     </section>
@@ -175,9 +175,9 @@
 
       <article class="project-block">
         <h3>GameScore — <a href="https://github.com/AlanZayon/GameScore-Project">github.com/AlanZayon/GameScore-Project</a></h3>
-        <p class="stack">Next.js 16 · ASP.NET Core 10 · EF Core · Hangfire · PostgreSQL · Redis · Docker</p>
+        <p class="stack">Next.js 16 · React 19 · ASP.NET Core 10 · EF Core · Hangfire · PostgreSQL · Redis · Docker</p>
         <ul class="bullets">
-          <li>Web platform to discover and rate games by player recommendations. Next.js + ASP.NET Core modular monolith with Wilson-score ranking, full-text search on PostgreSQL, Hangfire jobs, and shared scoring maths with golden tests.</li>
+          <li>Web platform to discover and rate games by player recommendations. Next.js + ASP.NET Core 10 modular monolith with Wilson-score ranking, full-text search on PostgreSQL, Hangfire jobs, and shared scoring maths with golden tests (migrated from NestJS).</li>
         </ul>
       </article>
 
