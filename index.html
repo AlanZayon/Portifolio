@@ -476,6 +476,8 @@
                             <span class="skill-tag">Multi-tenancy</span>
                             <span class="skill-tag">RBAC</span>
                             <span class="skill-tag">Idempotent Webhooks</span>
+                            <span class="skill-tag">RAG / FAISS</span>
+                            <span class="skill-tag">LLM Pipelines</span>
                         </div>
                     </div>
                 </div>
@@ -502,6 +504,8 @@
                     <span class="skill-tag">Caching (Redis)</span>
                     <span class="skill-tag">Background Jobs</span>
                     <span class="skill-tag">Full-text Search</span>
+                    <span class="skill-tag">Cursor</span>
+                    <span class="skill-tag">Python / Flask</span>
                 </div>
             </div>
         </div>
@@ -530,7 +534,7 @@
                     <div class="about-content">
                         <p data-translate="about_p1">I'm a Full-Stack .NET Developer focused on C#, ASP.NET Core, and Angular/Vue — building APIs and UIs for event platforms, access control, and fiscal products.</p>
 
-                        <p data-translate="about_p2">I work end-to-end: business rules, multi-tenant isolation, Hangfire/Azure Service Bus jobs, and integrations including idempotent webhooks and DAS/DARF/OFX reconciliation.</p>
+                        <p data-translate="about_p2">I work end-to-end: business rules, multi-tenant isolation, Hangfire/Azure Service Bus jobs, and integrations including idempotent webhooks and DAS/DARF/OFX reconciliation. I also ship LLM/RAG pipelines (Python, FAISS) and use Cursor daily with review of generated code.</p>
 
                         <div class="backend-specialties">
                             <h5 data-translate="about_specialties">My Specialties:</h5>
@@ -559,6 +563,13 @@
                                         <h6><i class="fas fa-shield-alt me-2"></i> <span
                                                 data-translate="about_security">Reliability</span></h6>
                                         <p class="mb-0" data-translate="about_security_desc">RBAC, multi-tenancy, idempotent webhooks</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="backend-skill-item">
+                                        <h6><i class="fas fa-robot me-2"></i> <span
+                                                data-translate="about_ai">LLM / RAG</span></h6>
+                                        <p class="mb-0" data-translate="about_ai_desc">FAISS pipelines, async workers, Cursor-assisted delivery</p>
                                     </div>
                                 </div>
                             </div>
@@ -593,7 +604,7 @@
                     <span data-translate="exp1_place">Rio de Janeiro, Brazil</span>
                     · <span class="dates" data-translate="exp1_dates">Feb 2026 – Present</span>
                 </p>
-                <p data-translate="exp1_desc">Facial-biometrics event platform (Angular 19, .NET 9, SQL Server): partner face API, 30k-row background imports, Azure Service Bus, idempotent payment webhooks.</p>
+                <p data-translate="exp1_desc">Contributed to the existing facial-biometrics event platform (Angular 19, .NET 9, SQL Server): partner face API, 30k-row background imports, Azure Service Bus, idempotent payment webhooks.</p>
                 <p class="experience-meta mt-2 mb-0" data-translate="exp1_note"><em>Proprietary product — no public demo.</em></p>
             </article>
 
@@ -723,7 +734,7 @@
                         </div>
                         <div class="project-content">
                             <h3 data-translate="project2_title">Smart RPG Campaign Generator</h3>
-                            <p data-translate="project2_description">Turns a rules PDF into a playable campaign (overview, sessions, appendix) via an async RAG pipeline with job idempotency.</p>
+                            <p data-translate="project2_description">End-to-end RAG pipeline: rules PDF → embeddings/FAISS → plan → writing → review, with a Redis worker, job idempotency, and Markdown on S3.</p>
 
                             <div class="backend-features">
                                 <h6 data-translate="projects_features">Key Features:</h6>
@@ -732,7 +743,7 @@
                                             data-translate="project2_feature1">Redis queue + separate worker</span>
                                     </li>
                                     <li><i class="fas fa-check-circle"></i> <span
-                                            data-translate="project2_feature2">RAG/FAISS → plan → writing → review</span></li>
+                                            data-translate="project2_feature2">Embeddings/FAISS → plan → writing → review</span></li>
                                     <li><i class="fas fa-check-circle"></i> <span
                                             data-translate="project2_feature3">Job-key idempotency</span></li>
                                     <li><i class="fas fa-check-circle"></i> <span
@@ -1072,7 +1083,7 @@
                 // About Section
                 'about_title': 'Sobre Mim',
                 'about_p1': 'Sou Desenvolvedor Full-Stack .NET com foco em C#, ASP.NET Core e Angular/Vue — construindo APIs e UIs para plataformas de eventos, controle de acesso e produtos fiscais.',
-                'about_p2': 'Atuo de ponta a ponta: regras de negócio, isolamento multi-tenant, jobs Hangfire/Azure Service Bus e integrações com webhooks idempotentes e conciliação DAS/DARF/OFX.',
+                'about_p2': 'Atuo de ponta a ponta: regras de negócio, isolamento multi-tenant, jobs Hangfire/Azure Service Bus e integrações com webhooks idempotentes e conciliação DAS/DARF/OFX. Também entrego pipelines LLM/RAG (Python, FAISS) e uso Cursor no dia a dia com revisão do código gerado.',
                 'about_specialties': 'Minhas Especialidades:',
                 'about_api': 'APIs & .NET',
                 'about_api_desc': 'ASP.NET Core REST APIs, EF Core, Hangfire',
@@ -1082,6 +1093,8 @@
                 'about_cloud_desc': 'Azure Service Bus, background jobs, Redis',
                 'about_security': 'Confiabilidade',
                 'about_security_desc': 'RBAC, multi-tenancy, webhooks idempotentes',
+                'about_ai': 'LLM / RAG',
+                'about_ai_desc': 'Pipelines FAISS, workers assíncronos, entrega com Cursor',
                 'about_hire': 'Contrate-me',
                 'about_cv': 'Baixar CV',
                 'about_experience': 'Anos de Experiência',
@@ -1093,7 +1106,7 @@
                 'exp1_title': 'Desenvolvedor Full-Stack — ASC Solutions',
                 'exp1_place': 'Rio de Janeiro, Brasil',
                 'exp1_dates': 'Fev 2026 – Atual',
-                'exp1_desc': 'Plataforma de eventos com biometria facial (Angular 19, .NET 9, SQL Server): API de parceiros, importações de 30 mil registros, Azure Service Bus e webhooks de pagamento idempotentes.',
+                'exp1_desc': 'Atuei no desenvolvimento da plataforma de eventos com biometria facial já existente (Angular 19, .NET 9, SQL Server): API de parceiros, importações de 30 mil registros, Azure Service Bus e webhooks de pagamento idempotentes.',
                 'exp1_note': 'Produto proprietário — sem demo pública.',
                 'exp2_title': 'Desenvolvedor Full-Stack (Freelancer) — Mitfokus Contabilidade Médica',
                 'exp2_place': 'Campinas, Brasil · Remoto',
@@ -1130,9 +1143,9 @@
                 'project1_feature6': 'Docs de arquitetura, scoring e API no repositório',
 
                 'project2_title': 'Gerador Inteligente de Campanhas RPG',
-                'project2_description': 'Transforma PDF de regras em campanha jogável (visão geral, sessões, apêndice) com pipeline RAG assíncrono e idempotência de jobs.',
+                'project2_description': 'Pipeline RAG ponta a ponta: PDF de regras → embeddings/FAISS → plano → escrita → revisão, com worker Redis, idempotência de jobs e Markdown no S3.',
                 'project2_feature1': 'Fila Redis + worker separado',
-                'project2_feature2': 'RAG/FAISS → plano → escrita → revisão',
+                'project2_feature2': 'Embeddings/FAISS → plano → escrita → revisão',
                 'project2_feature3': 'Idempotência por chave de job',
                 'project2_feature4': 'Markdown publicado no AWS S3',
                 'project2_feature5': 'API com JWT',
@@ -1210,7 +1223,7 @@
                 // About Section
                 'about_title': 'About Me',
                 'about_p1': 'I\'m a Full-Stack .NET Developer focused on C#, ASP.NET Core, and Angular/Vue — building APIs and UIs for event platforms, access control, and fiscal products.',
-                'about_p2': 'I work end-to-end: business rules, multi-tenant isolation, Hangfire/Azure Service Bus jobs, and integrations including idempotent webhooks and DAS/DARF/OFX reconciliation.',
+                'about_p2': 'I work end-to-end: business rules, multi-tenant isolation, Hangfire/Azure Service Bus jobs, and integrations including idempotent webhooks and DAS/DARF/OFX reconciliation. I also ship LLM/RAG pipelines (Python, FAISS) and use Cursor daily with review of generated code.',
                 'about_specialties': 'My Specialties:',
                 'about_api': 'APIs & .NET',
                 'about_api_desc': 'ASP.NET Core REST APIs, EF Core, Hangfire',
@@ -1220,6 +1233,8 @@
                 'about_cloud_desc': 'Azure Service Bus, background jobs, Redis',
                 'about_security': 'Reliability',
                 'about_security_desc': 'RBAC, multi-tenancy, idempotent webhooks',
+                'about_ai': 'LLM / RAG',
+                'about_ai_desc': 'FAISS pipelines, async workers, Cursor-assisted delivery',
                 'about_hire': 'Hire Me',
                 'about_cv': 'Download CV',
                 'about_experience': 'Years Experience',
@@ -1231,7 +1246,7 @@
                 'exp1_title': 'Full-Stack Developer — ASC Solutions',
                 'exp1_place': 'Rio de Janeiro, Brazil',
                 'exp1_dates': 'Feb 2026 – Present',
-                'exp1_desc': 'Facial-biometrics event platform (Angular 19, .NET 9, SQL Server): partner face API, 30k-row background imports, Azure Service Bus, idempotent payment webhooks.',
+                'exp1_desc': 'Contributed to the existing facial-biometrics event platform (Angular 19, .NET 9, SQL Server): partner face API, 30k-row background imports, Azure Service Bus, idempotent payment webhooks.',
                 'exp1_note': 'Proprietary product — no public demo.',
                 'exp2_title': 'Full-Stack Developer (Freelance) — Mitfokus Medical Accounting',
                 'exp2_place': 'Campinas, Brazil · Remote',
@@ -1268,9 +1283,9 @@
                 'project1_feature6': 'Architecture, scoring and API docs in-repo',
 
                 'project2_title': 'Smart RPG Campaign Generator',
-                'project2_description': 'Turns a rules PDF into a playable campaign (overview, sessions, appendix) via an async RAG pipeline with job idempotency.',
+                'project2_description': 'End-to-end RAG pipeline: rules PDF → embeddings/FAISS → plan → writing → review, with a Redis worker, job idempotency, and Markdown on S3.',
                 'project2_feature1': 'Redis queue + separate worker',
-                'project2_feature2': 'RAG/FAISS → plan → writing → review',
+                'project2_feature2': 'Embeddings/FAISS → plan → writing → review',
                 'project2_feature3': 'Job-key idempotency',
                 'project2_feature4': 'Markdown published to AWS S3',
                 'project2_feature5': 'JWT-secured API',

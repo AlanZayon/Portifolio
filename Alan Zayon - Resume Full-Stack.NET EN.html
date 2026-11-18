@@ -88,6 +88,7 @@
       <p class="summary">
         Full-Stack developer focused on C#, .NET 8/9, and ASP.NET Core, building REST APIs and Angular/Vue interfaces for corporate event, access-control, and fiscal products.
         I work end-to-end: business rules, per-tenant data isolation, asynchronous processing (queues and background jobs), and system integrations — including webhooks, DAS/DARF/OFX reconciliation, and flows tied to turnstiles and kiosks.
+        I also build LLM/RAG pipelines (Python, FAISS, Redis): PDF ingestion, vector retrieval, and assisted generation in async workers with job idempotency. I use Cursor daily, with review and tests on generated code.
         Seeking Full-Stack .NET / C# roles where I deliver the API, the operations UI, and end-to-end flow reliability.
       </p>
     </section>
@@ -100,6 +101,7 @@
       <p><strong>Messaging &amp; processing:</strong> Azure Service Bus (queues and topics), Hangfire, background jobs; BullMQ (Node.js)</p>
       <p><strong>Cloud &amp; DevOps:</strong> Docker, GitHub Actions, CI/CD, AWS S3, Git</p>
       <p><strong>Engineering:</strong> multi-tenancy, RBAC, idempotency, webhooks, fiscal reconciliation (DAS/DARF/OFX)</p>
+      <p><strong>AI / LLM:</strong> Python, RAG (Retrieval-Augmented Generation), FAISS, async generation pipelines, embeddings / vector search; Cursor (with review and tests on generated code)</p>
       <p><strong>Also used:</strong> Node.js, NestJS</p>
     </section>
 
@@ -116,7 +118,7 @@
           <span class="dates"><time datetime="2026-02">February 2026</time> – Present</span>
         </p>
         <ul class="bullets">
-          <li>Built the facial-biometrics event platform in Angular 19, C#, .NET 9, and SQL Server, including a production partner API for face queries with token auth, IP whitelist, and rate limiting — each tenant can access only their own data.</li>
+          <li>Contributed to the existing facial-biometrics event platform in Angular 19, C#, .NET 9, and SQL Server, including a production partner API for face queries with token auth, IP whitelist, and rate limiting — each tenant can access only their own data.</li>
           <li>Moved imports of up to 30,000 records from the browser into background jobs with validation, failure reports, and batch resume, freeing the operations UI from heavy processing.</li>
           <li>Implemented Azure Service Bus publishing (queue or topic per event) to decouple the event flow from local access databases used by turnstiles, including after ticket purchase.</li>
           <li>On the members club, implemented idempotency for payment webhooks (paid, canceled, refund) and a recurring-card job for overdue installments.</li>
@@ -185,7 +187,7 @@
         <h3>Smart RPG Campaign Generator — <a href="https://github.com/AlanZayon/python-gerador-inteligente-RPG">github.com/AlanZayon/python-gerador-inteligente-RPG</a></h3>
         <p class="stack">Python · Flask · Redis · PostgreSQL · AWS S3 · FAISS (RAG) · JWT</p>
         <ul class="bullets">
-          <li>Tool for GMs: turns a rules PDF into a playable campaign (overview, sessions, appendix). Async API with Redis queue, worker (RAG/FAISS → plan → writing → review), job idempotency, and Markdown published to S3.</li>
+          <li>End-to-end RAG pipeline: rules PDF → embeddings/FAISS → plan → writing → review, on a Redis worker with job-key idempotency and Markdown published to S3 (Flask, PostgreSQL, JWT).</li>
         </ul>
       </article>
     </section>
